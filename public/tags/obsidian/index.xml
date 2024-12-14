@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Obsidian on Matos Data Science</title>
-    <link>https://matosdatascience.com/tags/obsidian/</link>
+    <link>http://localhost:1313/tags/obsidian/</link>
     <description>Recent content in Obsidian on Matos Data Science</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 13 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://matosdatascience.com/tags/obsidian/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 13 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/obsidian/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>An Obsidian based blog system</title>
-      <link>https://matosdatascience.com/posts/an-obsidian-based-blog-system/</link>
+      <link>http://localhost:1313/posts/an-obsidian-based-blog-system/</link>
       <pubDate>Wed, 13 Dec 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://matosdatascience.com/posts/an-obsidian-based-blog-system/</guid>
+      <guid>http://localhost:1313/posts/an-obsidian-based-blog-system/</guid>
       <description>&lt;h2 id=&#34;from-vaults-folder-to-blogs-feed&#34;&gt;from: Vault&amp;rsquo;s folder, to: Blog&amp;rsquo;s feed&lt;/h2&gt;
 &lt;p&gt;This is my personal Blogging pipeline that whas thankfulli founded in the hands of the content creator NetWorkChuck, and can be found at this follow &lt;a href=&#34;https://www.youtube.com/watch?v=dnE7c0ELEH8&amp;amp;list=PLazumvohNo-2qvB49-9RL4karLMmqBDas&amp;amp;index=18&#34;&gt;link&lt;/a&gt;. I hope it could find you to well, and help you too on express beter ideias to the word.&lt;/p&gt;
 &lt;p&gt;It serves well if you to like to have the control you publications and to have some code-based-automation fun!&lt;/p&gt;
@@ -24,13 +24,13 @@
 &lt;p&gt;And down below is how i made it.&lt;/p&gt;
 &lt;h2 id=&#34;why-do-it&#34;&gt;Why do it?&lt;/h2&gt;
 &lt;p&gt;The CEO of &lt;a href=&#34;https://www.anthropic.com/&#34;&gt;Anthropic&lt;/a&gt; (a startup founded by former OpenAI members) and &lt;a href=&#34;https://danielmiessler.com/&#34;&gt;Daniel Miessler&lt;/a&gt; have some interesting ideas about AI, the future, and how it will affect our lives. In my view, this one seems particularly reasonable:&lt;br&gt;
-&lt;img src=&#34;https://matosdatascience.com/images/daniel_miessler_x_post.png&#34; alt=&#34;Image Description&#34;&gt;
+![[daniel_miessler_x_post.png]]
 From what I understand, as AI becomes more decentralized, it will become more efficient for people around the world to share ideas and create goods. And whether or not it’s currently hyped in the tech market, the benefits of open dialogue on improving the economy are widely recognized.&lt;/p&gt;
 &lt;p&gt;So, if we could use a Zettelkasten-like note system to extract our thoughts and then have an application that can draw directly from a vault to quickly and easily produce blog posts, that would be very helpful.&lt;/p&gt;
 &lt;p&gt;Like many discoveries throughout history, it all starts with just a few letters.&lt;/p&gt;
 &lt;h2 id=&#34;how-it-works&#34;&gt;How it works&lt;/h2&gt;
 &lt;p&gt;The following chart demonstrates how it should be done:
-&lt;img src=&#34;https://matosdatascience.com/images/blog_system.png&#34; alt=&#34;Image Description&#34;&gt;
+![[blog_system.png]]
 Is expected to:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;A post folder is feeded.&lt;/li&gt;
@@ -75,8 +75,8 @@ Is expected to:&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;paste inside hugo.toml file the configurations founded at the theme description site. Is at some &amp;ldquo;how to configure section&amp;rdquo;. Make sure to skip module and so parts.&lt;/li&gt;
-&lt;li&gt;Run ==hugo server -t [your_chosen_theme]== to see if it is working locally. Acess the server and celebrate! =]&lt;/li&gt;
+&lt;li&gt;paste inside hugo.toml file the configurations founded at the theme description site. Is att some &amp;ldquo;how to configure section&amp;rdquo;. Make sure to skip module and so parts.&lt;/li&gt;
+&lt;li&gt;Run ==hugo server -T [your_chosen_theme]== to see if it is working locally. Acess the server and celebrate! =]&lt;/li&gt;
 &lt;li&gt;Open the content folder inside the site directory. Create a ==posts== folder. Inside content folder  use: ==robocopy &amp;ldquo;[source_path]&amp;rdquo; &amp;ldquo;[destination_path]&amp;rdquo; /mir==.&lt;/li&gt;
 &lt;li&gt;Back to the site&amp;rsquo;s root and use ==hugo server== for your eyes only. =]. Inside ==public/post== are the html versions of  Obsidian&amp;rsquo;s Markdown files.&lt;/li&gt;
 &lt;li&gt;Go to the Obsidian&amp;rsquo;s source mode on your note. Lets take some FrontMater | Metadata | Proprieties to it. Insert between &amp;mdash; and &amp;mdash; the title, date, draft(false) and some tags(this onde on -|bullets). If you like to, You can have some templater on and so&amp;hellip; Use robocopy inside contents &amp;amp; hugo server inside root to see the efects!&lt;/li&gt;
@@ -85,7 +85,7 @@ Is expected to:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;On you vault, put all your blog images inside an Attachments deficades folder&lt;/li&gt;
 &lt;li&gt;Now i will put an totally perfect and precise image in this note.
-&lt;img src=&#34;https://matosdatascience.com/images/smile.png&#34; alt=&#34;Image Description&#34;&gt;
+![[smile.png]]
 If just do so, it wil be not consider like one to hugo. It need some temper. Spycy! =]&lt;/li&gt;
 &lt;li&gt;Paste this script in a imgs.py file on the root of your site. Remember to replace the directories variables (I made some alterations, becose when i did use the Chuck&amp;rsquo;s one, it modifies the original path):&lt;/li&gt;
 &lt;/ul&gt;
@@ -663,17 +663,17 @@ ssh-keygen -t rsa -b 4096 -C &amp;ldquo;&lt;a href=&#34;mailto:your_email@exampl
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;!-- normal images --&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;![Description](/images/image.png)
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;!-- To use it on vault --&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;![Image Description](/images/imagem.png)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;![[imagem.png]]
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;!-- for logo --&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;![logo Description](/images/logo.png)
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;!-- To use it on vault --&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;![logo Description](/images/logo_imagem.png)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;![[logo_imagem.png|logo]]
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;!-- for profile images --&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;![profile Description](/images/photo.jpg)
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;!-- To use it on vault --&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;![profile Description](/images/perfil.jpg)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;![[perfil.jpg|profile]]
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;Select and use you favorite&amp;hellip;
@@ -959,10 +959,10 @@ Make sure to get ==[markup.goldmark.renderer] unsafe = true== on the hugo.toml f
     
     <item>
       <title>post novo</title>
-      <link>https://matosdatascience.com/posts/post-novo/</link>
+      <link>http://localhost:1313/posts/post-novo/</link>
       <pubDate>Wed, 13 Dec 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://matosdatascience.com/posts/post-novo/</guid>
+      <guid>http://localhost:1313/posts/post-novo/</guid>
       <description>&lt;h2 id=&#34;post&#34;&gt;post&lt;/h2&gt;
 &lt;p&gt;algo?4&lt;/p&gt;</description>
       <content>&lt;h2 id=&#34;post&#34;&gt;post&lt;/h2&gt;
