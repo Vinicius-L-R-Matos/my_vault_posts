@@ -14,4 +14,4 @@ series:
 
 ## post
 
-algo?8
+algo?
