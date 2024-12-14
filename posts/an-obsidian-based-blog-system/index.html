@@ -278,13 +278,13 @@ What is happening here is that some obsidian valt is feeding the content of thou
 <p>And down below is how i made it.</p>
 <h2 id="why-do-it">Why do it?<a href="#why-do-it" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>The CEO of <a href="https://www.anthropic.com/">Anthropic</a> (a startup founded by former OpenAI members) and <a href="https://danielmiessler.com/">Daniel Miessler</a> have some interesting ideas about AI, the future, and how it will affect our lives. In my view, this one seems particularly reasonable:<br>
-![[daniel_miessler_x_post.png]]
+<img src="/images/daniel_miessler_x_post.png" alt="Image Description">
 From what I understand, as AI becomes more decentralized, it will become more efficient for people around the world to share ideas and create goods. And whether or not it’s currently hyped in the tech market, the benefits of open dialogue on improving the economy are widely recognized.</p>
 <p>So, if we could use a Zettelkasten-like note system to extract our thoughts and then have an application that can draw directly from a vault to quickly and easily produce blog posts, that would be very helpful.</p>
 <p>Like many discoveries throughout history, it all starts with just a few letters.</p>
 <h2 id="how-it-works">How it works<a href="#how-it-works" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>The following chart demonstrates how it should be done:
-![[blog_system.png]]
+<img src="/images/blog_system.png" alt="Image Description">
 Is expected to:</p>
 <ul>
 <li>A post folder is feeded.</li>
@@ -330,7 +330,7 @@ Is expected to:</p>
 </div>
 </div><ul>
 <li>paste inside hugo.toml file the configurations founded at the theme description site. Is att some &ldquo;how to configure section&rdquo;. Make sure to skip module and so parts.</li>
-<li>Run ==hugo server -T [your_chosen_theme]== to see if it is working locally. Acess the server and celebrate! =]</li>
+<li>Run ==hugo server -r [your_chosen_theme]== to see if it is working locally. Acess the server and celebrate! =]</li>
 <li>Open the content folder inside the site directory. Create a ==posts== folder. Inside content folder  use: ==robocopy &ldquo;[source_path]&rdquo; &ldquo;[destination_path]&rdquo; /mir==.</li>
 <li>Back to the site&rsquo;s root and use ==hugo server== for your eyes only. =]. Inside ==public/post== are the html versions of  Obsidian&rsquo;s Markdown files.</li>
 <li>Go to the Obsidian&rsquo;s source mode on your note. Lets take some FrontMater | Metadata | Proprieties to it. Insert between &mdash; and &mdash; the title, date, draft(false) and some tags(this onde on -|bullets). If you like to, You can have some templater on and so&hellip; Use robocopy inside contents &amp; hugo server inside root to see the efects!</li>
@@ -339,7 +339,7 @@ Is expected to:</p>
 <ul>
 <li>On you vault, put all your blog images inside an Attachments deficades folder</li>
 <li>Now i will put an totally perfect and precise image in this note.
-![[smile.png]]
+<img src="/images/smile.png" alt="Image Description">
 If just do so, it wil be not consider like one to hugo. It need some temper. Spycy! =]</li>
 <li>Paste this script in a imgs.py file on the root of your site. Remember to replace the directories variables (I made some alterations, becose when i did use the Chuck&rsquo;s one, it modifies the original path):</li>
 </ul>
@@ -917,17 +917,17 @@ ssh-keygen -t rsa -b 4096 -C &ldquo;<a href="mailto:your_email@example.com">your
 </span></span><span style="display:flex;"><span>&lt;!-- normal images --&gt;
 </span></span><span style="display:flex;"><span>![Description](/images/image.png)
 </span></span><span style="display:flex;"><span>&lt;!-- To use it on vault --&gt;
-</span></span><span style="display:flex;"><span>![[imagem.png]]
+</span></span><span style="display:flex;"><span>![Image Description](/images/imagem.png)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>&lt;!-- for logo --&gt;
 </span></span><span style="display:flex;"><span>![logo Description](/images/logo.png)
 </span></span><span style="display:flex;"><span>&lt;!-- To use it on vault --&gt;
-</span></span><span style="display:flex;"><span>![[logo_imagem.png|logo]]
+</span></span><span style="display:flex;"><span>![logo Description](/images/logo_imagem.png)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>&lt;!-- for profile images --&gt;
 </span></span><span style="display:flex;"><span>![profile Description](/images/photo.jpg)
 </span></span><span style="display:flex;"><span>&lt;!-- To use it on vault --&gt;
-</span></span><span style="display:flex;"><span>![[perfil.jpg|profile]]
+</span></span><span style="display:flex;"><span>![profile Description](/images/perfil.jpg)
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>Select and use you favorite&hellip;
