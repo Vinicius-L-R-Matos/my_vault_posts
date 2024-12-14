@@ -964,9 +964,9 @@ Make sure to get ==[markup.goldmark.renderer] unsafe = true== on the hugo.toml f
       
       <guid>https://matosdatascience.com/posts/post-novo/</guid>
       <description>&lt;h2 id=&#34;post&#34;&gt;post&lt;/h2&gt;
-&lt;p&gt;algo?43&lt;/p&gt;</description>
+&lt;p&gt;segundo post! =]]&lt;/p&gt;</description>
       <content>&lt;h2 id=&#34;post&#34;&gt;post&lt;/h2&gt;
-&lt;p&gt;algo?43&lt;/p&gt;
+&lt;p&gt;segundo post! =]]&lt;/p&gt;
 </content>
     </item>
     
