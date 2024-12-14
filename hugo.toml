@@ -1,0 +1,102 @@
+baseurl = "https://matosdatascience.com/"
+languageCode = "en-us"
+theme = "terminal"
+paginate = 5
+staticDir = ["static"]
+
+[params]
+  # Basic settings
+  contentTypeName = "posts"
+  showMenuItems = 3
+  fullWidthTheme = true
+  centerTheme = true
+  autoCover = true
+
+  # Reading experience improvements
+  showLastUpdated = true
+  enableGitInfo = true
+  readingTime = true          # Definido apenas uma vez aqui
+  showWordCount = true        # Contagem de palavras
+  Toc = true
+  TocTitle = "Table of Contents"
+  minuteReadingTime = "min read"
+  words = "words"
+
+  # Date format
+  dateFormat = "January 2, 2006 15:04 MST"
+
+  # SEO metadata
+  description = "Blog about Data Science, Python and Data Analysis"
+  keywords = "data science, python, data analysis, machine learning"
+  images = ["images/datascience_logo.jpg"]
+  
+  # Para excluir certas seções
+  [params.excludedTypes]
+    about = true             # Exclui métricas da página about
+  
+  # Social sharing
+  [params.social]
+    twitter = "your_twitter"
+    github = "your_github"
+    linkedin = "https://www.linkedin.com/in/vinicius-rodriguesdematos/"
+
+[languages]
+  [languages.en]
+    languageName = "English"
+    title = "Matos Data Science"
+    
+    [languages.en.params]
+      subtitle = "Blog about Data Science and Programming"
+      owner = "Vinicius Matos"
+      keywords = "data science, python, data analysis"
+      copyright = "© 2023 Matos Data Science"
+      menuMore = "Show more"
+      readMore = "Read more"
+      readOtherPosts = "Read other posts"
+      newerPosts = "Newer posts"
+      olderPosts = "Older posts"
+      missingContentMessage = "Page not found..."
+      missingBackButtonLabel = "Back to home page"
+      minuteReadingTime = "min read"
+      words = "words"
+
+      [languages.en.params.logo]
+        logoText = "Matos Data Science"
+        logoHomeLink = "/"
+
+      [languages.en.menu]
+        [[languages.en.menu.main]]
+          identifier = "posts"
+          name = "Posts"
+          url = "/posts"
+          weight = 1
+        [[languages.en.menu.main]]
+          identifier = "about"
+          name = "About"
+          url = "/about"
+          weight = 2
+        [[languages.en.menu.main]]
+          identifier = "projects"
+          name = "Projects"
+          url = "/projects"
+          weight = 3
+
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    lineNos = true
+    style = "monokai"
+
+  [markup.tableOfContents]
+    endLevel = 3
+    ordered = false
+    startLevel = 2
+
+  [markup.goldmark.renderer]
+    unsafe = true
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  series = "series"
