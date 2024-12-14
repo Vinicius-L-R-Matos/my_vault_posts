@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Matos Data Science</title>
-    <link>http://localhost:1313/</link>
+    <link>https://matosdatascience.com/</link>
     <description>Recent content on Matos Data Science</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 13 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 13 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://matosdatascience.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
-      <link>http://localhost:1313/about/</link>
+      <link>https://matosdatascience.com/about/</link>
       <pubDate>Wed, 13 Dec 2023 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/about/</guid>
+      <guid>https://matosdatascience.com/about/</guid>
       <description>&lt;h1 id=&#34;about-me&#34;&gt;About Me&lt;/h1&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/Vinicius_Matos.png&#34; alt=&#34;profile Vinicius Matos&#34;&gt;
+&lt;p&gt;&lt;img src=&#34;https://matosdatascience.com/images/Vinicius_Matos.png&#34; alt=&#34;profile Vinicius Matos&#34;&gt;
 Hi! I&amp;rsquo;m Vinicius Matos, a Data Scientist and Python Developer based in Brazil.&lt;/p&gt;
 &lt;h2 id=&#34;professional-background&#34;&gt;Professional Background&lt;/h2&gt;
 &lt;p&gt;I specialize in:&lt;/p&gt;
@@ -52,7 +52,7 @@ Hi! I&amp;rsquo;m Vinicius Matos, a Data Scientist and Python Developer based in
 &lt;h2 id=&#34;contact&#34;&gt;Contact&lt;/h2&gt;
 &lt;p&gt;You can find me on:&lt;/p&gt;</description>
       <content>&lt;h1 id=&#34;about-me&#34;&gt;About Me&lt;/h1&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/Vinicius_Matos.png&#34; alt=&#34;profile Vinicius Matos&#34;&gt;
+&lt;p&gt;&lt;img src=&#34;https://matosdatascience.com/images/Vinicius_Matos.png&#34; alt=&#34;profile Vinicius Matos&#34;&gt;
 Hi! I&amp;rsquo;m Vinicius Matos, a Data Scientist and Python Developer based in Brazil.&lt;/p&gt;
 &lt;h2 id=&#34;professional-background&#34;&gt;Professional Background&lt;/h2&gt;
 &lt;p&gt;I specialize in:&lt;/p&gt;
@@ -95,7 +95,7 @@ Hi! I&amp;rsquo;m Vinicius Matos, a Data Scientist and Python Developer based in
 &lt;li&gt;&lt;a href=&#34;https://twitter.com/your-twitter&#34;&gt;Twitter&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;blog-purpose&#34;&gt;Blog Purpose&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/datascience_logo.png&#34; alt=&#34;This is why. Golden Circle!Data Science Logo&#34;&gt;
+&lt;p&gt;&lt;img src=&#34;https://matosdatascience.com/images/datascience_logo.png&#34; alt=&#34;This is why. Golden Circle!Data Science Logo&#34;&gt;
 This blog serves as a platform where I share:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Data Science tutorials&lt;/li&gt;
@@ -109,10 +109,10 @@ This blog serves as a platform where I share:&lt;/p&gt;
     
     <item>
       <title>An Obsidian based blog system</title>
-      <link>http://localhost:1313/posts/an-obsidian-based-blog-system/</link>
+      <link>https://matosdatascience.com/posts/an-obsidian-based-blog-system/</link>
       <pubDate>Wed, 13 Dec 2023 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/an-obsidian-based-blog-system/</guid>
+      <guid>https://matosdatascience.com/posts/an-obsidian-based-blog-system/</guid>
       <description>&lt;h2 id=&#34;from-vaults-folder-to-blogs-feed&#34;&gt;from: Vault&amp;rsquo;s folder, to: Blog&amp;rsquo;s feed&lt;/h2&gt;
 &lt;p&gt;This is my personal Blogging pipeline that whas thankfulli founded in the hands of the content creator NetWorkChuck, and can be found at this follow &lt;a href=&#34;https://www.youtube.com/watch?v=dnE7c0ELEH8&amp;amp;list=PLazumvohNo-2qvB49-9RL4karLMmqBDas&amp;amp;index=18&#34;&gt;link&lt;/a&gt;. I hope it could find you to well, and help you too on express beter ideias to the word.&lt;/p&gt;
 &lt;p&gt;It serves well if you to like to have the control you publications and to have some code-based-automation fun!&lt;/p&gt;
@@ -1059,10 +1059,10 @@ Make sure to get ==[markup.goldmark.renderer] unsafe = true== on the hugo.toml f
     
     <item>
       <title>post novo</title>
-      <link>http://localhost:1313/posts/post-novo/</link>
+      <link>https://matosdatascience.com/posts/post-novo/</link>
       <pubDate>Wed, 13 Dec 2023 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/post-novo/</guid>
+      <guid>https://matosdatascience.com/posts/post-novo/</guid>
       <description>&lt;h2 id=&#34;post&#34;&gt;post&lt;/h2&gt;
 &lt;p&gt;algo?4&lt;/p&gt;</description>
       <content>&lt;h2 id=&#34;post&#34;&gt;post&lt;/h2&gt;
@@ -1072,10 +1072,10 @@ Make sure to get ==[markup.goldmark.renderer] unsafe = true== on the hugo.toml f
     
     <item>
       <title>Projects</title>
-      <link>http://localhost:1313/projects/</link>
+      <link>https://matosdatascience.com/projects/</link>
       <pubDate>Wed, 13 Dec 2023 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/projects/</guid>
+      <guid>https://matosdatascience.com/projects/</guid>
       <description>&lt;h1 id=&#34;data-science-projects&#34;&gt;Data Science Projects&lt;/h1&gt;
 &lt;p&gt;Here are some of my key projects in Data Science and Python Development.&lt;/p&gt;
 &lt;h2 id=&#34;-machine-learning-projects&#34;&gt;🤖 Machine Learning Projects&lt;/h2&gt;

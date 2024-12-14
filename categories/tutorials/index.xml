@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tutorials on Matos Data Science</title>
-    <link>http://localhost:1313/categories/tutorials/</link>
+    <link>https://matosdatascience.com/categories/tutorials/</link>
     <description>Recent content in Tutorials on Matos Data Science</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 13 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/tutorials/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 13 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://matosdatascience.com/categories/tutorials/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>An Obsidian based blog system</title>
-      <link>http://localhost:1313/posts/an-obsidian-based-blog-system/</link>
+      <link>https://matosdatascience.com/posts/an-obsidian-based-blog-system/</link>
       <pubDate>Wed, 13 Dec 2023 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/an-obsidian-based-blog-system/</guid>
+      <guid>https://matosdatascience.com/posts/an-obsidian-based-blog-system/</guid>
       <description>&lt;h2 id=&#34;from-vaults-folder-to-blogs-feed&#34;&gt;from: Vault&amp;rsquo;s folder, to: Blog&amp;rsquo;s feed&lt;/h2&gt;
 &lt;p&gt;This is my personal Blogging pipeline that whas thankfulli founded in the hands of the content creator NetWorkChuck, and can be found at this follow &lt;a href=&#34;https://www.youtube.com/watch?v=dnE7c0ELEH8&amp;amp;list=PLazumvohNo-2qvB49-9RL4karLMmqBDas&amp;amp;index=18&#34;&gt;link&lt;/a&gt;. I hope it could find you to well, and help you too on express beter ideias to the word.&lt;/p&gt;
 &lt;p&gt;It serves well if you to like to have the control you publications and to have some code-based-automation fun!&lt;/p&gt;
@@ -959,10 +959,10 @@ Make sure to get ==[markup.goldmark.renderer] unsafe = true== on the hugo.toml f
     
     <item>
       <title>post novo</title>
-      <link>http://localhost:1313/posts/post-novo/</link>
+      <link>https://matosdatascience.com/posts/post-novo/</link>
       <pubDate>Wed, 13 Dec 2023 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/post-novo/</guid>
+      <guid>https://matosdatascience.com/posts/post-novo/</guid>
       <description>&lt;h2 id=&#34;post&#34;&gt;post&lt;/h2&gt;
 &lt;p&gt;algo?4&lt;/p&gt;</description>
       <content>&lt;h2 id=&#34;post&#34;&gt;post&lt;/h2&gt;
