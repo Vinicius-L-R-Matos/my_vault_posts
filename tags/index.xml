@@ -2,37 +2,37 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Matos Data Science</title>
-    <link>https://matosdatascience.com/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on Matos Data Science</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 13 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://matosdatascience.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 13 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Blog</title>
-      <link>https://matosdatascience.com/tags/blog/</link>
+      <link>http://localhost:1313/tags/blog/</link>
       <pubDate>Wed, 13 Dec 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://matosdatascience.com/tags/blog/</guid>
+      <guid>http://localhost:1313/tags/blog/</guid>
       <description></description>
       <content></content>
     </item>
     
     <item>
       <title>How_to</title>
-      <link>https://matosdatascience.com/tags/how_to/</link>
+      <link>http://localhost:1313/tags/how_to/</link>
       <pubDate>Wed, 13 Dec 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://matosdatascience.com/tags/how_to/</guid>
+      <guid>http://localhost:1313/tags/how_to/</guid>
       <description></description>
       <content></content>
     </item>
     
     <item>
       <title>Obsidian</title>
-      <link>https://matosdatascience.com/tags/obsidian/</link>
+      <link>http://localhost:1313/tags/obsidian/</link>
       <pubDate>Wed, 13 Dec 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://matosdatascience.com/tags/obsidian/</guid>
+      <guid>http://localhost:1313/tags/obsidian/</guid>
       <description></description>
       <content></content>
     </item>
