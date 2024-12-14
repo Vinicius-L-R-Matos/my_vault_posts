@@ -23,7 +23,7 @@ And down below is how i made it.
 
 ## Why do it?
 The CEO of [Anthropic](https://www.anthropic.com/) (a startup founded by former OpenAI members) and [Daniel Miessler](https://danielmiessler.com/) have some interesting ideas about AI, the future, and how it will affect our lives. In my view, this one seems particularly reasonable:  
-![Image Description](/images/daniel_miessler_x_post.png)
+![[daniel_miessler_x_post.png]]
 From what I understand, as AI becomes more decentralized, it will become more efficient for people around the world to share ideas and create goods. And whether or not it’s currently hyped in the tech market, the benefits of open dialogue on improving the economy are widely recognized.
 
 So, if we could use a Zettelkasten-like note system to extract our thoughts and then have an application that can draw directly from a vault to quickly and easily produce blog posts, that would be very helpful.
@@ -32,7 +32,7 @@ Like many discoveries throughout history, it all starts with just a few letters.
 
 ## How it works
 The following chart demonstrates how it should be done:
-![Image Description](/images/blog_system.png)
+![[blog_system.png]]
 Is expected to:
 - A post folder is feeded.
 - Its content is "robocopyed" to the respective folder of the site's project.
@@ -62,8 +62,8 @@ git config --global user.email "your.email@example.com"
 #Find a theme ---> https://themes.gohugo.io/ and clone it:
 git submodule add -f https://github.com/panr/hugo-theme-terminal.git themes/terminal
 ```
-- paste inside hugo.toml file the configurations founded at the theme description site. Is at some "how to configure section". Make sure to skip module and so parts.
-- Run ==hugo server -t [your_chosen_theme]== to see if it is working locally. Acess the server and celebrate! =]
+- paste inside hugo.toml file the configurations founded at the theme description site. Is att some "how to configure section". Make sure to skip module and so parts.
+- Run ==hugo server -T [your_chosen_theme]== to see if it is working locally. Acess the server and celebrate! =]
 - Open the content folder inside the site directory. Create a ==posts== folder. Inside content folder  use: ==robocopy "[source_path]" "[destination_path]" /mir==. 
 - Back to the site's root and use ==hugo server== for your eyes only. =]. Inside ==public/post== are the html versions of  Obsidian's Markdown files.
 - Go to the Obsidian's source mode on your note. Lets take some FrontMater | Metadata | Proprieties to it. Insert between --- and --- the title, date, draft(false) and some tags(this onde on -|bullets). If you like to, You can have some templater on and so... Use robocopy inside contents & hugo server inside root to see the efects!
@@ -71,7 +71,7 @@ git submodule add -f https://github.com/panr/hugo-theme-terminal.git themes/term
 ## Images Attachments
 - On you vault, put all your blog images inside an Attachments deficades folder
 - Now i will put an totally perfect and precise image in this note. 
-	![Image Description](/images/smile.png)
+	![[smile.png]]
 	If just do so, it wil be not consider like one to hugo. It need some temper. Spycy! =]
 - Paste this script in a imgs.py file on the root of your site. Remember to replace the directories variables (I made some alterations, becose when i did use the Chuck's one, it modifies the original path):
 ```
@@ -363,17 +363,17 @@ Now, when posting an image, just ==| logo or profile== input in the description 
 <!-- normal images -->
 ![Description](/images/image.png)
 <!-- To use it on vault -->
-![Image Description](/images/imagem.png)
+![[imagem.png]]
 
 <!-- for logo -->
 ![logo Description](/images/logo.png)
 <!-- To use it on vault -->
-![logo Description](/images/logo_imagem.png)
+![[logo_imagem.png|logo]]
 
 <!-- for profile images -->
 ![profile Description](/images/photo.jpg)
 <!-- To use it on vault -->
-![profile Description](/images/perfil.jpg)
+![[perfil.jpg|profile]]
 ```
 Select and use you favorite...
 Make sure to get ==[markup.goldmark.renderer] unsafe = true== on the hugo.toml file.
