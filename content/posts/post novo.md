@@ -14,4 +14,4 @@ series:
 
 ## post
 
-segundo post! =]]
+segundo post! =]] e executa via obsidian!
