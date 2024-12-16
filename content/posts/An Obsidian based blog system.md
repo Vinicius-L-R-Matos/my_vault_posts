@@ -13,7 +13,6 @@ series: ["getting-started"]
 ---
 
 ## From: Vault's folder. To: Blog's feed 
-aaaaaaaaaaaaaaaa
 This is my personal blogging pipeline, which I thankfully discovered through the content creator [NetWorkChuck](https://www.youtube.com/watch?v=dnE7c0ELEH8&list=PLazumvohNo-2qvB49-9RL4karLMmqBDas&index=18). I hope this pipeline also proves useful to you, helping you express better ideas to the world.
 
 If you enjoy maintaining control over your publications and having some code-based automation fun, this approach should serve you well!
