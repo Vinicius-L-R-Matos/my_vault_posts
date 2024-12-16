@@ -12,34 +12,43 @@ categories: ["tutorials"]
 series: ["getting-started"]
 ---
 
-## from: Vault's folder, to: Blog's feed 
-This is my personal Blogging pipeline that whas thankfulli founded in the hands of the content creator NetWorkChuck, and can be found at this follow [link](https://www.youtube.com/watch?v=dnE7c0ELEH8&list=PLazumvohNo-2qvB49-9RL4karLMmqBDas&index=18). I hope it could find you to well, and help you too on express beter ideias to the word.
+## From: Vault's folder. To: Blog's feed 
+This is my personal blogging pipeline, which I thankfully discovered through the content creator [NetWorkChuck](https://www.youtube.com/watch?v=dnE7c0ELEH8&list=PLazumvohNo-2qvB49-9RL4karLMmqBDas&index=18). I hope this pipeline also proves useful to you, helping you express better ideas to the world.
 
-It serves well if you to like to have the control you publications and to have some code-based-automation fun!
+If you enjoy maintaining control over your publications and having some code-based automation fun, this approach should serve you well!
 
-What is happening here is that some obsidian valt is feeding the content of thouse publications that you are seeing now. In a process that thake a minimal effort once it have started.
+What’s happening here is that an Obsidian vault is feeding the content of the posts you’re reading right now. Once everything is set up, the process requires minimal effort to keep running smoothly.
 
-And down below is how i made it.
+I’ve used a [fastpages](https://vinicius-l-r-matos.github.io/-Repositorio-DS/) blog for the last 3 years. While it was very functional, it became a bit annoying not having full control over all the errors that occurred in Jekyll. And since it officially migrated to [Quarto](https://quarto.org/), I no longer had my familiar framework for transcribing my markdown files into posts. However, I had a great experience using Obsidian and decided to share what I learned.
+
+Below, I’ll show you how I built this blog and how everything works.
 
 ## Why do it?
-The CEO of [Anthropic](https://www.anthropic.com/) (a startup founded by former OpenAI members) and [Daniel Miessler](https://danielmiessler.com/) have some interesting ideas about AI, the future, and how it will affect our lives. In my view, this one seems particularly reasonable:  
+The CEO of [Anthropic](https://www.anthropic.com/)—a startup founded by former OpenAI members— mister [Daniel Miessler](https://danielmiessler.com/) have shared some interesting perspectives on AI, the future, and how these technologies will shape our lives. In my view, this particular idea seems especially reasonable one:
 ![Image Description](/images/daniel_miessler_x_post.png)
-From what I understand, as AI becomes more decentralized, it will become more efficient for people around the world to share ideas and create goods. And whether or not it’s currently hyped in the tech market, the benefits of open dialogue on improving the economy are widely recognized.
+From my understanding, as AI becomes more decentralized, it will become increasingly efficient for people around the world to share ideas and create goods. Regardless of whether it’s currently hyped in the tech market, the benefits of open dialogue on improving the economy are widely recognized.
 
-So, if we could use a Zettelkasten-like note system to extract our thoughts and then have an application that can draw directly from a vault to quickly and easily produce blog posts, that would be very helpful.
+So, if we could use a Zettelkasten-like note system to capture our thoughts and then have an application draw directly from a vault to quickly and easily produce blog posts, that would be incredibly helpful and productive.
 
-Like many discoveries throughout history, it all starts with just a few letters.
-
+As with many discoveries throughout history, it all starts with just a few letters.
 ## How it works
-The following chart demonstrates how it should be done:
+The following chart demonstrates how it’s done:
 ![Image Description](/images/blog_system.png)
-Is expected to:
-- A post folder is feeded.
-- Its content is "robocopyed" to the respective folder of the site's project.
-- An frame work called Hugo transfers it Mardows to HTML files (And fome images to...)
-- Is all uload to an remote repository's branch
-- An host provider deliver it all!
+Putting it into a few words, it is expected that:
 
+- A post folder is provided.
+- Its content is “robocopied” to the appropriate folder in the site’s project.
+- A framework called Hugo transforms the Markdown files (and some images, too) into HTML.
+- Everything is uploaded to a branch of a remote repository.
+- A hosting provider delivers it all!
+
+## The Materials
+The following are needed and will be explained—along with their downloads, installations, and setups—in the next sections:
+- Obsidian
+- Git
+- Git hub
+- Hugo
+- Host site
 ## The Setup
 - [Dowload](https://obsidian.md/download) and install Obsidian.
 - On your regular Vault os Choice, Create a Folder called ==posts==. Here wil be where all your expressions can live!
@@ -82,44 +91,43 @@ import shutil
 # Paths
 posts_dir = r"D:\Google Drive\DriveSyncFiles\Vault\posts"
 attachments_dir = r"D:\Google Drive\DriveSyncFiles\Vault\Attachments"
-hugo_posts_dir = r"D:\MyBlogStufs\matosdatascienceblog\content\posts"  # Novo diretório para os posts do Hugo
+hugo_posts_dir = r"D:\MyBlogStufs\matosdatascienceblog\content\posts"  # New directpry for Hugo
 static_images_dir = r"D:\MyBlogStufs\matosdatascienceblog\static\images"
 
-# Criar diretórios se não existirem
+# Create if not exists
 for dir_path in [hugo_posts_dir, static_images_dir]:
     if not os.path.exists(dir_path):
         os.makedirs(dir_path)
 
-# Processar cada arquivo markdown
+# Process every mardown file
 for filename in os.listdir(posts_dir):
     if filename.endswith(".md"):
-        # Ler arquivo original do Obsidian
+        # Read original file from Obsidian
         source_path = os.path.join(posts_dir, filename)
         with open(source_path, "r", encoding="utf-8") as file:
             content = file.read()
         
-        # Encontrar e processar imagens
+        # Find and process images
         images = re.findall(r'\[\[([^]]*\.png)\]\]', content)
         
-        # Criar cópia modificada para o Hugo
+        # Make hugo on each one
         hugo_content = content
         for image in images:
-            # Substituir links apenas na cópia para o Hugo
+            # Replace links only for Hugo's one
             markdown_image = f"![Image Description](/images/{image.replace(' ', '%20')})"
             hugo_content = hugo_content.replace(f"[[{image}]]", markdown_image)
             
-            # Copiar imagem para o diretório static do Hugo
+            # Copy image for static on Hugo
             image_source = os.path.join(attachments_dir, image)
             if os.path.exists(image_source):
                 shutil.copy(image_source, static_images_dir)
         
-        # Salvar versão modificada no diretório do Hugo
+        # Save in the hupo dir
         hugo_path = os.path.join(hugo_posts_dir, filename)
         with open(hugo_path, "w", encoding="utf-8") as file:
             file.write(hugo_content)
 
-print("Arquivos processados e copiados com sucesso!")
-
+print("Files processed end copy!")
 ```
 - And create a ==static/images== folder. Run the python file and see if the image whas transfer!
 
@@ -127,50 +135,48 @@ print("Arquivos processados e copiados com sucesso!")
 - You can save an automation, so when called, it can update and run all:
 ```
 # update_blog.py
-import os
-import subprocess
+import os 
+import subprocess 
 
-# Diretório base do projeto
-base_dir = r"my_blog_directori\matosdatascienceblog"
+# Base directory of the project 
+base_dir = r"my_blog_directory\my_data_science_blog" 
 
-# Comandos a serem executados
-commands = [
-    f'robocopy "D:\Google Drive\DriveSyncFiles\Vault\posts" "{base_dir}\content\posts" /mir',
-    'python imgs.py',
-    'hugo server -t terminal'
-]
+# Commands to execute commands = [ 
+	f'robocopy "D:\\GoogleDrive\\DriveSyncFiles\\Vault\\posts" "{base_dir}\\content\\posts" /mir', 
+	'python imgs.py', 
+	'hugo server -t terminal' 
+] 
 
-# Mudar para o diretório do projeto
-os.chdir(base_dir)
+# Change to the project directory 
+os.chdir(base_dir) 
 
-# Executar comandos em sequência
+# Execute commands in sequence 
 for cmd in commands:
-    print(f"Executando: {cmd}")
-    subprocess.run(cmd, shell=True)
+	print(f"Executing: {cmd}") subprocess.run(cmd, shell=True)
 ```
 
-- I have also done a centralized run file to update all:
+- And also do a centralized run file to update all:
 ```
 # update_blog.py
 import os
 import subprocess
 
-# Diretório base do projeto
-base_dir = r"my_blog_directori\matosdatascienceblog"
+# Base directory of the project
+base_dir = r"my_blog_directory\my_data_science_blog"
 
-# Comandos a serem executados
+# Commands to be executed
 commands = [
-    f'robocopy "D:\Google Drive\DriveSyncFiles\Vault\posts" "{base_dir}\content\posts" /mir',
+    f'robocopy "D:\\Google Drive\\DriveSyncFiles\\Vault\\posts" "{base_dir}\\content\\posts" /mir',
     'python imgs.py',
     'hugo server -t terminal'
 ]
 
-# Mudar para o diretório do projeto
+# Change to the project directory
 os.chdir(base_dir)
 
-# Executar comandos em sequência
+# Execute commands in sequence
 for cmd in commands:
-    print(f"Executando: {cmd}")
+    print(f"Executing: {cmd}")
     subprocess.run(cmd, shell=True)
 ```
 
@@ -193,7 +199,7 @@ git push origin hostinger-deploy:hostinger --force
 git branch -D hostinger-deploy
 ```
 
-- And also put all inside a big one:
+- And also put all inside a the big one:
 ```
 import os
 import re
@@ -202,70 +208,70 @@ import subprocess
 from datetime import datetime
 
 # Paths
-base_dir = r"my_blog_directori\matosdatascienceblog"
-posts_dir = r"D:\Google Drive\DriveSyncFiles\Vault\posts"
-attachments_dir = r"D:\Google Drive\DriveSyncFiles\Vault\Attachments"
+base_dir = r"my_blog_directory\my_data_science_blog"
+posts_dir = r"D:\GoogleDrive\DriveSyncFiles\Vault\posts"
+attachments_dir = r"D:\GoogleDrive\DriveSyncFiles\Vault\Attachments"
 hugo_posts_dir = os.path.join(base_dir, "content", "posts")
 static_images_dir = os.path.join(base_dir, "static", "images")
 
 def process_images():
-    print("Processando imagens...")
-    # Criar diretórios se não existirem
+    print("Processing images...")
+    # Create directories if they do not exist
     for dir_path in [hugo_posts_dir, static_images_dir]:
         if not os.path.exists(dir_path):
             os.makedirs(dir_path)
 
-    # Processar cada arquivo markdown
+    # Process each markdown file
     for filename in os.listdir(posts_dir):
         if filename.endswith(".md"):
-            # Ler arquivo original do Obsidian
+            # Read the original Obsidian file
             source_path = os.path.join(posts_dir, filename)
             with open(source_path, "r", encoding="utf-8") as file:
                 content = file.read()
             
-            # Encontrar e processar imagens
+            # Find and process images
             images = re.findall(r'\[\[([^]]*\.png)\]\]', content)
             
-            # Criar cópia modificada para o Hugo
+            # Create a modified copy for Hugo
             hugo_content = content
             for image in images:
-                # Substituir links apenas na cópia para o Hugo
+                # Replace links in the Hugo version only
                 markdown_image = f"![Image Description](/images/{image.replace(' ', '%20')})"
                 hugo_content = hugo_content.replace(f"[[{image}]]", markdown_image)
                 
-                # Copiar imagem para o diretório static do Hugo
+                # Copy image to the Hugo static directory
                 image_source = os.path.join(attachments_dir, image)
                 if os.path.exists(image_source):
                     shutil.copy(image_source, static_images_dir)
             
-            # Salvar versão modificada no diretório do Hugo
+            # Save the modified version in the Hugo directory
             hugo_path = os.path.join(hugo_posts_dir, filename)
             with open(hugo_path, "w", encoding="utf-8") as file:
                 file.write(hugo_content)
     
-    print("Arquivos processados e copiados com sucesso!")
+    print("Files processed and copied successfully!")
     return True
 
 def execute_robocopy():
     cmd = f'robocopy "{posts_dir}" "{hugo_posts_dir}" /mir'
-    print(f"Executando: {cmd}")
+    print(f"Executing: {cmd}")
     result = subprocess.run(cmd, shell=True)
     return result.returncode <= 7
 
 def execute_command(cmd):
-    print(f"Executando: {cmd}")
+    print(f"Executing: {cmd}")
     try:
         subprocess.run(cmd, shell=True, check=True)
         return True
     except subprocess.CalledProcessError as e:
-        print(f"Erro ao executar {cmd}: {e}")
+        print(f"Error executing {cmd}: {e}")
         return False
 
 def git_commands():
     current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     return [
         'git add .',
-        f'git commit -m "Blog atualizado em {current_time}"',
+        f'git commit -m "Blog updated at {current_time}"',
         'git push origin master',
         'git subtree split --prefix public -b hostinger',
         'git push origin hostinger --force',
@@ -273,36 +279,36 @@ def git_commands():
     ]
 
 def main():
-    # Mudar para o diretório do projeto
+    # Change to the project directory
     os.chdir(base_dir)
 
-    # Executar robocopy
+    # Execute robocopy
     if not execute_robocopy():
-        print("Erro crítico no robocopy")
+        print("Critical error in robocopy")
         return False
 
-    # Processar imagens
+    # Process images
     if not process_images():
-        print("Erro ao processar imagens")
+        print("Error processing images")
         return False
 
-    # Gerar site Hugo
+    # Generate the Hugo site
     if not execute_command('hugo --cleanDestinationDir'):
         return False
 
-    # Executar comandos git
+    # Execute git commands
     for cmd in git_commands():
         if not execute_command(cmd):
             return False
 
-    print("Blog atualizado com sucesso!")
+    print("Blog successfully updated!")
     return True
 
 if __name__ == "__main__":
     main()
 ```
 
-- Implement the repo manualy to someserver. Here i used a blck php one on hostinger. until make your self familiar to it.
+- Implement the repo manualy to someserver. Until make your self familiar to it. Then you can host it. Here i used a blank php one on hostinger. 
 ## Host it
 - Put your git URL by the folling steps on the form dependig it is private or public. this is a public one. So i used a ==https://github.com/my_git_user/my_repo.git==.
 - Once is all working, Implemet manualy. If is working, click on the auto-implement button. A modal will appear, explanning a webhook URL(copy this one), and a link to configure it on you github account. acces id and paste onde the correspondenting field. Make no other chages and save it. It is done! It should work just fine as this one here is.
@@ -313,7 +319,7 @@ if __name__ == "__main__":
 To improve the visual appearance of your blog, especially for images, create a `layouts/partials/extended_head.html` file:
 ```
 <style>
-/* Estilo global para todas as imagens em posts e páginas */
+/* Global style for all images in posts and pages */
 .post-content img,
 .page-content img,
 .post img,
@@ -328,7 +334,7 @@ To improve the visual appearance of your blog, especially for images, create a `
     transition: transform 0.3s ease;
 }
 
-/* Hover effect suave */
+/* Smooth hover effect */
 .post-content img:hover,
 .page-content img:hover,
 .post img:hover,
@@ -336,7 +342,7 @@ To improve the visual appearance of your blog, especially for images, create a `
     transform: scale(1.02);
 }
 
-/* Ajuste para imagens menores (como logos) */
+/* Adjustments for smaller images (such as logos) */
 .post-content img[alt*="logo"],
 .page-content img[alt*="logo"],
 .post img[alt*="logo"],
@@ -345,7 +351,7 @@ To improve the visual appearance of your blog, especially for images, create a `
     box-shadow: none;
 }
 
-/* Ajuste para imagens de perfil */
+/* Adjustments for profile images */
 .post-content img[alt*="profile"],
 .page-content img[alt*="profile"],
 .post img[alt*="profile"],
@@ -359,24 +365,24 @@ To improve the visual appearance of your blog, especially for images, create a `
 
 Now, when posting an image, just ==| logo or profile== input in the description for the style you want on it:
 ```
-<!-- Now you can use the first word to determinate the style! -->
-<!-- normal images -->
+<!-- Now you can use the first word in the Vault image call to determinate the style! -->
+
+<!-- normal images in the blog -->
 ![Description](/images/image.png)
-<!-- To use it on vault -->
+<!-- use it on vault -->
 ![Image Description](/images/imagem.png)
 
-<!-- for logo -->
+<!-- for logo in the blog -->
 ![logo Description](/images/logo.png)
-<!-- To use it on vault -->
+<!-- use it on vault -->
 ![logo Description](/images/logo_imagem.png)
 
-<!-- for profile images -->
+<!-- for profile images in the blog -->
 ![profile Description](/images/photo.jpg)
-<!-- To use it on vault -->
+<!-- use it on vault -->
 ![profile Description](/images/perfil.jpg)
 ```
-Select and use you favorite...
-Make sure to get ==[markup.goldmark.renderer] unsafe = true== on the hugo.toml file.
+Select and use you favorite. Make sure to get ==[markup.goldmark.renderer] unsafe = true== on the hugo.toml file.
 
 ### Creating About Page
 Create a new file `content/about.md`:
@@ -394,50 +400,10 @@ draft: false
 
 !(profile Description)[profile_photo.png]
 
-Hi! I'm [Your Name], a Data Scientist and Python Developer.
+Hi! 
 
-## Professional Background
-
-I specialize in:
-
-- Data Science
-
-- Machine Learning
-
-- Python Development
-
-- Data Analysis
-
-## Skills
-
-### Programming Languages
-
-- Python
-
-- R
-
-- SQL
-
-### Tools & Technologies
-
-- Pandas
-
-- Scikit-learn
-
-- TensorFlow
-
-- Git
-
-## Contact
-
-You can find me on:
-
-- GitHub
-
-- LinkedIn
+<!-- All other stuffs -->
 ```
-
-
 ### Creating Projects Page
 Create a new file `content/projects.md`:
 ```
@@ -452,77 +418,138 @@ draft: false
 
 ---
 
-# Data Science Projects
+#  Projects
 
-## 🤖 Machine Learning Projects
-
-### Blog Pipeline Automation
-
-!project logo
-
-- Tech Stack: Python, Hugo, Git
-
-- Description: Automated blog deployment pipeline that converts Obsidian notes to Hugo posts
-
-- Key Features:
-
-- Automatic image processing
-
-- Git integration
-
-- Markdown conversion
-
-- Automated deployment
-
-### Other Project Name
-
-- Tech Stack: Python, Pandas, Scikit-learn
-
-- Description: Brief description of your project
-
-- Key Features:
-
-- Feature 1
-
-- Feature 2
-
-- Feature 3
-
-## 📊 Data Analysis Projects
-
-### Project Name
-
-- Dataset: Description of data source
-
-- Tools: Python, Pandas, Matplotlib
-
-- Outcome: Key findings or results
-
-## 📫 Interested in Collaboration?
-
-Feel free to reach out if you're interested in collaborating on any projects:
-
-- LinkedIn
-
-- GitHub
+<!-- All other stuffs -->
 ```
 
 ## Auto run an update
 - Install the Python scripter plugin. 
-- Put you update.py inside .obsidian/scripts/python folder and point you global python version on python version
+- Put you update.py inside .obsidian/scripts/python folder and point you global python version on python version. And here is my contribuition to it:
+```
+import os
+import re
+import shutil
+import subprocess
+from datetime import datetime
+import sys
+
+# Receive arguments from Obsidian
+python_script = sys.argv[0]  # script path
+vault_path = sys.argv[1]     # vault path
+file_path = sys.argv[2]      # file path
+
+# Paths
+base_dir = r"D:\MyBlogDirectory\my_data_science_blog"
+posts_dir = r"D:\GoogleDrive\DriveSyncFiles\Vault\posts"
+attachments_dir = r"D:\GoogleDrive\DriveSyncFiles\Vault\Attachments"
+hugo_posts_dir = os.path.join(base_dir, "content", "posts")
+static_images_dir = os.path.join(base_dir, "static", "images")
+
+def process_images():
+    print("Processing images...")
+    # Create directories if they do not exist
+    for dir_path in [hugo_posts_dir, static_images_dir]:
+        if not os.path.exists(dir_path):
+            os.makedirs(dir_path)
+
+    # Process each markdown file
+    for filename in os.listdir(posts_dir):
+        if filename.endswith(".md"):
+            source_path = os.path.join(posts_dir, filename)
+            with open(source_path, "r", encoding="utf-8") as file:
+                content = file.read()
+            
+            # Find and process images
+            pattern = r'!\[\[([^]]*\.(png|jpg|jpeg|gif))(\|[^]]*?)?\]\]'
+            images = re.findall(pattern, content)
+            
+            # Create a modified copy for Hugo
+            hugo_content = content
+            for image_path, ext, style in images:
+                # Determine style
+                if style and '|logo' in style:
+                    prefix = 'logo'
+                elif style and '|profile' in style:
+                    prefix = 'profile'
+                else:
+                    prefix = 'Image'
+                
+                # Build the exact original pattern
+                original_pattern = f"![[{image_path}{style}]]"
+                markdown_image = f"![{prefix} Description](/images/{image_path.replace(' ', '%20')})"
+                
+                # Replace in the Hugo content
+                hugo_content = hugo_content.replace(original_pattern, markdown_image)
+                
+                # Copy the image
+                image_source = os.path.join(attachments_dir, image_path)
+                if os.path.exists(image_source):
+                    shutil.copy(image_source, static_images_dir)
+            
+            # Save the processed file
+            hugo_path = os.path.join(hugo_posts_dir, filename)
+            with open(hugo_path, "w", encoding="utf-8") as file:
+                file.write(hugo_content)
+    
+    return True
+
+def execute_command(cmd):
+    print(f"Executing: {cmd}")
+    try:
+        subprocess.run(cmd, shell=True, check=True)
+        return True
+    except subprocess.CalledProcessError as e:
+        print(f"Error executing {cmd}: {e}")
+        return False
+
+def git_commands():
+    current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    return [
+        'git add .',
+        f'git commit -m "Blog updated at {current_time}"',
+        'git push origin master',
+        'git subtree split --prefix public -b hostinger',
+        'git push origin hostinger --force',
+        'git branch -D hostinger'
+    ]
+
+def main():
+    # Change to the project directory
+    os.chdir(base_dir)
+
+    # Process images (without robocopy)
+    if not process_images():
+        print("Error processing images")
+        return False
+
+    # Generate the Hugo site
+    if not execute_command('hugo --cleanDestinationDir'):
+        return False
+
+    # Execute git commands
+    for cmd in git_commands():
+        if not execute_command(cmd):
+            return False
+
+    print("Blog successfully updated!")
+    return True
+
+if __name__ == "__main__":
+    main()
+```
 - reload obsidian an now you can run it from the Ctrl + P comands.
 ## Common Issues
 - **Images not showing:** Check image path and case sensitivity
 - **Styles not applying:** Verify extended_head.html location
 - **Git errors:** Check SSH key configuration
 - **Hugo server errors:** Verify Hugo version compatibility
-
+- **Slowness in finishing:** Consider re-running the Hugo process. After all, the content mirrors the Vault! Delete everything except your content. Fewer updates will make it as fast as before.
 ## Regular Tasks
 - Backup your Obsidian vault
 - Update Hugo and theme versions
 - Check Git repository size
 - Monitor server logs
-
 ## Considerations
 It was verry fun and joyfull to see this blog being construct. I hope you to do it, so you can also spread this ideias and help others!
 
