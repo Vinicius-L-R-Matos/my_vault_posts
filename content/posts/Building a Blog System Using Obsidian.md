@@ -19,18 +19,23 @@ If you enjoy maintaining control over your publications and having some code-bas
 
 What’s happening here is that an Obsidian vault is feeding the content of the posts you’re reading right now. Once everything is set up, the process requires minimal effort to keep running smoothly.
 
-I’ve used a [fastpages](https://vinicius-l-r-matos.github.io/-Repositorio-DS/) blog for the last 3 years. While it was very functional, it became a bit annoying not having full control over all the errors that occurred in Jekyll. And since it officially migrated to [Quarto](https://quarto.org/), I no longer had my familiar framework for transcribing my markdown files into posts. However, I had a great experience using Obsidian and decided to share what I learned.
+Below, I’ll show you how I built this actually blog that you are reading and how everything works. So you can also do it for youself.
 
-Below, I’ll show you how I built this blog and how everything works.
+## In the past
+For over three years, I relied on [this](https://vinicius-l-r-matos.github.io/-Repositorio-DS/) Fastpages blog, which, while highly functional, often proved frustrating due to the lack of full control over errors in Jekyll.
 
-## Why do it?
-The CEO of [Anthropic](https://www.anthropic.com/)—a startup founded by former OpenAI members— mister [Daniel Miessler](https://danielmiessler.com/) have shared some interesting perspectives on AI, the future, and how these technologies will shape our lives. In my view, this particular idea seems especially reasonable one:
+With its official discontinuation in 2022 and migration to [Quarto](https://quarto.org/), I lost the familiar framework I had used to convert my Markdown files into posts. However, my experience transitioning to Obsidian for this purpose has been exceptional, and I’m eager to share what I’ve learned.
+
+## Why do this at all?
+The CEO of [Anthropic](https://www.anthropic.com/)—a startup founded by former OpenAI members—[Daniel Miessler](https://danielmiessler.com/) has shared insightful perspectives on AI, the future, and the transformative impact these technologies may have on our lives. One idea, in particular, resonates strongly with me:  
 ![Image Description](/images/daniel_miessler_x_post.png)
-From my understanding, as AI becomes more decentralized, it will become increasingly efficient for people around the world to share ideas and create goods. Regardless of whether it’s currently hyped in the tech market, the benefits of open dialogue on improving the economy are widely recognized.
 
-So, if we could use a Zettelkasten-like note system to capture our thoughts and then have an application draw directly from a vault to quickly and easily produce blog posts, that would be incredibly helpful and productive.
+From my understanding, as AI becomes more decentralized, it will enable people across the globe to share ideas and create goods more efficiently. Regardless of whether AI is currently hyped in the tech market, the benefits of fostering open dialogue to improve the global economy are undeniable.
 
-As with many discoveries throughout history, it all starts with just a few letters.
+This idea inspired me to explore the possibility of using a Zettelkasten-like note system to organize thoughts and create an application that directly pulls from a vault to effortlessly generate blog posts. Such a system would be both powerful and productive.
+
+Like many great discoveries in history, it all begins with just a few words...
+
 ## How it works
 The following chart demonstrates how it’s done:
 ![Image Description](/images/blog_system.png)
@@ -42,13 +47,15 @@ Putting it into a few words, it is expected that:
 - Everything is uploaded to a branch of a remote repository.
 - A hosting provider delivers it all!
 
-## The Materials
+## The Required Materials
 The following are needed and will be explained—along with their downloads, installations, and setups—in the next sections:
-- Obsidian
-- Git
-- Git hub
-- Hugo
-- Host site
+- Obsidian.
+- Git.
+- Git hub.
+- Hugo.
+- Host site.
+- Here, I used Windows as the operating system. Feel free to adapt the steps for others.
+
 ## The Setup
 - [Download](https://obsidian.md/download) and install Obsidian.
 - In your preferred Vault, create a folder named ==posts==. This folder will house all your blog content.
@@ -57,10 +64,10 @@ The following are needed and will be explained—along with their downloads, ins
 - Extract hugo.exe. Copy and paste it on a new folder call ==Hugo==. Add this path to your Sistem Variable PATH.
 - Make your Git acessible. If still dont, [download](https://git-scm.com/downloads) and install. It can handle diferent versions of you files.
 - Iniciate a new empty repository where you create you new site with hugo. Configure you email and name for this git.
-- Go to the [hugo themes](https://themes.gohugo.io/themes/) list and get one. Use one with ==Install theme as a submodule== on you terminal from the same directory for cloning it.
+- Go to the [Hugo themes](https://themes.gohugo.io/themes/) list and get one. Use one with ==Install theme as a submodule== on you terminal from the same directory for cloning it.
 - Open the local hugo.toml and paste here the configurations that your chosen theme provide. Ignore module and so sections.
 
-## Starting
+## Starting Up
 - Navigate to the directory where you want to store your site files from the CMD. Then, use the following command in your terminal: ==hugo new site [your_site_name]===.
 - Inicialize hit repository in the roo of the site projetc, add name and email configs, and find your the theme. Here i chise the terminal:
 ```
@@ -77,7 +84,7 @@ git submodule add -f https://github.com/panr/hugo-theme-terminal.git themes/term
 - Back to the site's root and use ==hugo server== for your eyes only. =]. Inside ==public/post== are the html versions of  Obsidian's Markdown files.
 - Go to the Obsidian's source mode on your note. Lets take some FrontMater | Metadata | Proprieties to it. Insert between --- and --- the title, date, draft(false) and some tags(this onde on -|bullets). If you like to, You can have some templater on and so... Use robocopy inside contents & hugo server inside root to see the efects!
 
-## Images Attachments
+## Do some Images Attachments
 - In your Vault, create a dedicated folder named `Attachments` for storing all your blog images.
 - Now i will put an totally perfect and precise image in this note. 
 	![Image Description](/images/smile.png)
@@ -308,14 +315,16 @@ if __name__ == "__main__":
     main()
 ```
 
-- Implement the repo manualy to someserver. Until make your self familiar to it. Then you can host it. Here i used a blank php one on hostinger. 
-## Host it
-- Enter your Git repository URL in the appropriate field, depending on whether it’s public or private. For this example, I used a public repository with the URL: ==https://github.com/my_git_user/my_repo.git==.
-- Once is all working, Implemet manualy. If is working, click on the auto-implement button. A modal will appear, explanning a webhook URL(copy this one), and a link to configure it on you github account. acces id and paste onde the correspondenting field. Make no other chages and save it. It is done! It should work just fine as this one here is.
-- You can also insert all by the python plugin! Confire as show in the Python Scripter!
-- start blogging! =]
+- Implement the repo manualy to someserver. Until make your self familiar to it. Then you can host it. Here i used a blank php one on hostinger.
 
-## Styling Your Blog - Custom Styles
+## Host it
+- Enter your Git repository URL in the appropriate field, based on whether it is public or private. In this example, I used a public repository with the following URL format: ==https://github.com/my_git_user/my_repo.git==.
+- Here, I opted for a Hostinger account. While it's not mandatory, I can confidently say it works smoothly and efficiently.
+- Once you did, Implemet manualy by using the function in you host provider. If is working, find and click on the auto-implement button. A modal will appear, explanning a webhook URL(copy this one), and a link to configure it on you github account. Acces id and paste in the correspondenting field. Make no other chages and save it. It is done! It should work just fine as this one here is.
+- You can also manage everything using the Python plugin! Configure it as demonstrated in the [Python Scripter](https://github.com/nickrallison/obsidian-python-scripter).
+- Start blogging! =]
+
+## Styling Your Blog With some Custom Styles
 To improve the visual appearance of your blog, especially for images, create a `layouts/partials/extended_head.html` file:
 ```
 <style>
@@ -363,7 +372,7 @@ To improve the visual appearance of your blog, especially for images, create a `
 </style>
 ```
 
-Now, when posting an image, just ==| logo or profile== input in the description for the style you want on it:
+Now, when refering to an image, just ==| logo or profile== input in the description for the style you want on it:
 ```
 <!-- Now you can use the first word in the Vault image call to determinate the style! -->
 
@@ -384,7 +393,7 @@ Now, when posting an image, just ==| logo or profile== input in the description 
 ```
 Select and use you favorite. Make sure to get ==[markup.goldmark.renderer] unsafe = true== on the hugo.toml file.
 
-### Creating About Page
+### Creating an About Page
 Create a new file `content/about.md`:
 ```
 ---
@@ -404,7 +413,8 @@ Hi!
 
 <!-- All other stuffs -->
 ```
-### Creating Projects Page
+
+### Creating an Projects Page
 Create a new file `content/projects.md`:
 ```
 
@@ -423,7 +433,7 @@ draft: false
 <!-- All other stuffs -->
 ```
 
-## Auto run an update
+## Try an Auto run update
 - Install the Python scripter plugin. 
 - Put you update.py inside .obsidian/scripts/python folder and point you global python version on python version. And here is my contribuition to it:
 ```
@@ -538,21 +548,24 @@ def main():
 if __name__ == "__main__":
     main()
 ```
-- reload obsidian an now you can run it from the Ctrl + P comands.
+- reload obsidian an now you can run it. If you have the scripter pluggin that i mentioned, from the Ctrl + P comands you can find it there.
+
 ## Common Issues
 - **Images not showing:** Check image path and case sensitivity
 - **Styles not applying:** Verify extended_head.html location
 - **Git errors:** Check SSH key configuration
 - **Hugo server errors:** Verify Hugo version compatibility
 - **Slowness in finishing:** Consider re-running the Hugo process. After all, the content mirrors the Vault! Delete everything except your content. Fewer updates will make it as fast as before.
+
 ## Regular Tasks
 - Backup your Obsidian vault
 - Update Hugo and theme versions
 - Check Git repository size
 - Monitor server logs
+
 ## Considerations
-It was verry fun and joyfull to see this blog being construct. I hope you to do it, so you can also spread this ideias and help others!
+It was verry fun and joyfull to see this blog being construct. I hope you to do it, so you can also spread your ideias and help others!
 
 ## References
-[I started a blog.....in 2024 (why you should too)](https://www.youtube.com/watch?v=dnE7c0ELEH8&list=PLazumvohNo-2qvB49-9RL4karLMmqBDas&index=18))
+[I started a blog.....in 2024 (why you should too)](https://www.youtube.com/watch?v=dnE7c0ELEH8&list=PLazumvohNo-2qvB49-9RL4karLMmqBDas&index=18)
 

@@ -121,14 +121,16 @@ This blog serves as a platform where I share:&lt;/p&gt;
 &lt;p&gt;This is my personal blogging pipeline, inspired by the content creator &lt;a href=&#34;https://www.youtube.com/watch?v=dnE7c0ELEH8&amp;amp;list=PLazumvohNo-2qvB49-9RL4karLMmqBDas&amp;amp;index=18&#34;&gt;NetWorkChuck&lt;/a&gt;. I hope this guide helps you express your ideas more effectively and share them with the world.&lt;/p&gt;
 &lt;p&gt;If you enjoy maintaining control over your publications and having some code-based automation fun, this approach should serve you well!&lt;/p&gt;
 &lt;p&gt;What’s happening here is that an Obsidian vault is feeding the content of the posts you’re reading right now. Once everything is set up, the process requires minimal effort to keep running smoothly.&lt;/p&gt;
-&lt;p&gt;I’ve used a &lt;a href=&#34;https://vinicius-l-r-matos.github.io/-Repositorio-DS/&#34;&gt;fastpages&lt;/a&gt; blog for the last 3 years. While it was very functional, it became a bit annoying not having full control over all the errors that occurred in Jekyll. And since it officially migrated to &lt;a href=&#34;https://quarto.org/&#34;&gt;Quarto&lt;/a&gt;, I no longer had my familiar framework for transcribing my markdown files into posts. However, I had a great experience using Obsidian and decided to share what I learned.&lt;/p&gt;
-&lt;p&gt;Below, I’ll show you how I built this blog and how everything works.&lt;/p&gt;
-&lt;h2 id=&#34;why-do-it&#34;&gt;Why do it?&lt;/h2&gt;
-&lt;p&gt;The CEO of &lt;a href=&#34;https://www.anthropic.com/&#34;&gt;Anthropic&lt;/a&gt;—a startup founded by former OpenAI members— mister &lt;a href=&#34;https://danielmiessler.com/&#34;&gt;Daniel Miessler&lt;/a&gt; have shared some interesting perspectives on AI, the future, and how these technologies will shape our lives. In my view, this particular idea seems especially reasonable one:
-&lt;img src=&#34;https://matosdatascience.com/images/daniel_miessler_x_post.png&#34; alt=&#34;Image Description&#34;&gt;
-From my understanding, as AI becomes more decentralized, it will become increasingly efficient for people around the world to share ideas and create goods. Regardless of whether it’s currently hyped in the tech market, the benefits of open dialogue on improving the economy are widely recognized.&lt;/p&gt;
-&lt;p&gt;So, if we could use a Zettelkasten-like note system to capture our thoughts and then have an application draw directly from a vault to quickly and easily produce blog posts, that would be incredibly helpful and productive.&lt;/p&gt;
-&lt;p&gt;As with many discoveries throughout history, it all starts with just a few letters.&lt;/p&gt;
+&lt;p&gt;Below, I’ll show you how I built this actually blog that you are reading and how everything works. So you can also do it for youself.&lt;/p&gt;
+&lt;h2 id=&#34;in-the-past&#34;&gt;In the past&lt;/h2&gt;
+&lt;p&gt;For over three years, I relied on &lt;a href=&#34;https://vinicius-l-r-matos.github.io/-Repositorio-DS/&#34;&gt;this&lt;/a&gt; Fastpages blog, which, while highly functional, often proved frustrating due to the lack of full control over errors in Jekyll.&lt;/p&gt;
+&lt;p&gt;With its official discontinuation in 2022 and migration to &lt;a href=&#34;https://quarto.org/&#34;&gt;Quarto&lt;/a&gt;, I lost the familiar framework I had used to convert my Markdown files into posts. However, my experience transitioning to Obsidian for this purpose has been exceptional, and I’m eager to share what I’ve learned.&lt;/p&gt;
+&lt;h2 id=&#34;why-do-this-at-all&#34;&gt;Why do this at all?&lt;/h2&gt;
+&lt;p&gt;The CEO of &lt;a href=&#34;https://www.anthropic.com/&#34;&gt;Anthropic&lt;/a&gt;—a startup founded by former OpenAI members—&lt;a href=&#34;https://danielmiessler.com/&#34;&gt;Daniel Miessler&lt;/a&gt; has shared insightful perspectives on AI, the future, and the transformative impact these technologies may have on our lives. One idea, in particular, resonates strongly with me:&lt;br&gt;
+&lt;img src=&#34;https://matosdatascience.com/images/daniel_miessler_x_post.png&#34; alt=&#34;Image Description&#34;&gt;&lt;/p&gt;
+&lt;p&gt;From my understanding, as AI becomes more decentralized, it will enable people across the globe to share ideas and create goods more efficiently. Regardless of whether AI is currently hyped in the tech market, the benefits of fostering open dialogue to improve the global economy are undeniable.&lt;/p&gt;
+&lt;p&gt;This idea inspired me to explore the possibility of using a Zettelkasten-like note system to organize thoughts and create an application that directly pulls from a vault to effortlessly generate blog posts. Such a system would be both powerful and productive.&lt;/p&gt;
+&lt;p&gt;Like many great discoveries in history, it all begins with just a few words&amp;hellip;&lt;/p&gt;
 &lt;h2 id=&#34;how-it-works&#34;&gt;How it works&lt;/h2&gt;
 &lt;p&gt;The following chart demonstrates how it’s done:
 &lt;img src=&#34;https://matosdatascience.com/images/blog_system.png&#34; alt=&#34;Image Description&#34;&gt;
@@ -140,14 +142,15 @@ Putting it into a few words, it is expected that:&lt;/p&gt;
 &lt;li&gt;Everything is uploaded to a branch of a remote repository.&lt;/li&gt;
 &lt;li&gt;A hosting provider delivers it all!&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;the-materials&#34;&gt;The Materials&lt;/h2&gt;
+&lt;h2 id=&#34;the-required-materials&#34;&gt;The Required Materials&lt;/h2&gt;
 &lt;p&gt;The following are needed and will be explained—along with their downloads, installations, and setups—in the next sections:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Obsidian&lt;/li&gt;
-&lt;li&gt;Git&lt;/li&gt;
-&lt;li&gt;Git hub&lt;/li&gt;
-&lt;li&gt;Hugo&lt;/li&gt;
-&lt;li&gt;Host site&lt;/li&gt;
+&lt;li&gt;Obsidian.&lt;/li&gt;
+&lt;li&gt;Git.&lt;/li&gt;
+&lt;li&gt;Git hub.&lt;/li&gt;
+&lt;li&gt;Hugo.&lt;/li&gt;
+&lt;li&gt;Host site.&lt;/li&gt;
+&lt;li&gt;Here, I used Windows as the operating system. Feel free to adapt the steps for others.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;the-setup&#34;&gt;The Setup&lt;/h2&gt;
 &lt;ul&gt;
@@ -158,10 +161,10 @@ Putting it into a few words, it is expected that:&lt;/p&gt;
 &lt;li&gt;Extract hugo.exe. Copy and paste it on a new folder call ==Hugo==. Add this path to your Sistem Variable PATH.&lt;/li&gt;
 &lt;li&gt;Make your Git acessible. If still dont, &lt;a href=&#34;https://git-scm.com/downloads&#34;&gt;download&lt;/a&gt; and install. It can handle diferent versions of you files.&lt;/li&gt;
 &lt;li&gt;Iniciate a new empty repository where you create you new site with hugo. Configure you email and name for this git.&lt;/li&gt;
-&lt;li&gt;Go to the &lt;a href=&#34;https://themes.gohugo.io/themes/&#34;&gt;hugo themes&lt;/a&gt; list and get one. Use one with ==Install theme as a submodule== on you terminal from the same directory for cloning it.&lt;/li&gt;
+&lt;li&gt;Go to the &lt;a href=&#34;https://themes.gohugo.io/themes/&#34;&gt;Hugo themes&lt;/a&gt; list and get one. Use one with ==Install theme as a submodule== on you terminal from the same directory for cloning it.&lt;/li&gt;
 &lt;li&gt;Open the local hugo.toml and paste here the configurations that your chosen theme provide. Ignore module and so sections.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;starting&#34;&gt;Starting&lt;/h2&gt;
+&lt;h2 id=&#34;starting-up&#34;&gt;Starting Up&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Navigate to the directory where you want to store your site files from the CMD. Then, use the following command in your terminal: ==hugo new site [your_site_name]===.&lt;/li&gt;
 &lt;li&gt;Inicialize hit repository in the roo of the site projetc, add name and email configs, and find your the theme. Here i chise the terminal:&lt;/li&gt;
@@ -191,7 +194,7 @@ Putting it into a few words, it is expected that:&lt;/p&gt;
 &lt;li&gt;Back to the site&amp;rsquo;s root and use ==hugo server== for your eyes only. =]. Inside ==public/post== are the html versions of  Obsidian&amp;rsquo;s Markdown files.&lt;/li&gt;
 &lt;li&gt;Go to the Obsidian&amp;rsquo;s source mode on your note. Lets take some FrontMater | Metadata | Proprieties to it. Insert between &amp;mdash; and &amp;mdash; the title, date, draft(false) and some tags(this onde on -|bullets). If you like to, You can have some templater on and so&amp;hellip; Use robocopy inside contents &amp;amp; hugo server inside root to see the efects!&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;images-attachments&#34;&gt;Images Attachments&lt;/h2&gt;
+&lt;h2 id=&#34;do-some-images-attachments&#34;&gt;Do some Images Attachments&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;In your Vault, create a dedicated folder named &lt;code&gt;Attachments&lt;/code&gt; for storing all your blog images.&lt;/li&gt;
 &lt;li&gt;Now i will put an totally perfect and precise image in this note.
@@ -646,12 +649,13 @@ ssh-keygen -t rsa -b 4096 -C &amp;ldquo;&lt;a href=&#34;mailto:your_email@exampl
 &lt;/ul&gt;
 &lt;h2 id=&#34;host-it&#34;&gt;Host it&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Enter your Git repository URL in the appropriate field, depending on whether it’s public or private. For this example, I used a public repository with the URL: ==https://github.com/my_git_user/my_repo.git==.&lt;/li&gt;
-&lt;li&gt;Once is all working, Implemet manualy. If is working, click on the auto-implement button. A modal will appear, explanning a webhook URL(copy this one), and a link to configure it on you github account. acces id and paste onde the correspondenting field. Make no other chages and save it. It is done! It should work just fine as this one here is.&lt;/li&gt;
-&lt;li&gt;You can also insert all by the python plugin! Confire as show in the Python Scripter!&lt;/li&gt;
-&lt;li&gt;start blogging! =]&lt;/li&gt;
+&lt;li&gt;Enter your Git repository URL in the appropriate field, based on whether it is public or private. In this example, I used a public repository with the following URL format: ==https://github.com/my_git_user/my_repo.git==.&lt;/li&gt;
+&lt;li&gt;Here, I opted for a Hostinger account. While it&amp;rsquo;s not mandatory, I can confidently say it works smoothly and efficiently.&lt;/li&gt;
+&lt;li&gt;Once you did, Implemet manualy by using the function in you host provider. If is working, find and click on the auto-implement button. A modal will appear, explanning a webhook URL(copy this one), and a link to configure it on you github account. Acces id and paste in the correspondenting field. Make no other chages and save it. It is done! It should work just fine as this one here is.&lt;/li&gt;
+&lt;li&gt;You can also manage everything using the Python plugin! Configure it as demonstrated in the &lt;a href=&#34;https://github.com/nickrallison/obsidian-python-scripter&#34;&gt;Python Scripter&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Start blogging! =]&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;styling-your-blog---custom-styles&#34;&gt;Styling Your Blog - Custom Styles&lt;/h2&gt;
+&lt;h2 id=&#34;styling-your-blog-with-some-custom-styles&#34;&gt;Styling Your Blog With some Custom Styles&lt;/h2&gt;
 &lt;p&gt;To improve the visual appearance of your blog, especially for images, create a &lt;code&gt;layouts/partials/extended_head.html&lt;/code&gt; file:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
@@ -745,7 +749,7 @@ ssh-keygen -t rsa -b 4096 -C &amp;ldquo;&lt;a href=&#34;mailto:your_email@exampl
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/style&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;Now, when posting an image, just ==| logo or profile== input in the description for the style you want on it:&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;Now, when refering to an image, just ==| logo or profile== input in the description for the style you want on it:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 1
@@ -785,7 +789,7 @@ ssh-keygen -t rsa -b 4096 -C &amp;ldquo;&lt;a href=&#34;mailto:your_email@exampl
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;Select and use you favorite. Make sure to get ==[markup.goldmark.renderer] unsafe = true== on the hugo.toml file.&lt;/p&gt;
-&lt;h3 id=&#34;creating-about-page&#34;&gt;Creating About Page&lt;/h3&gt;
+&lt;h3 id=&#34;creating-an-about-page&#34;&gt;Creating an About Page&lt;/h3&gt;
 &lt;p&gt;Create a new file &lt;code&gt;content/about.md&lt;/code&gt;:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
@@ -825,7 +829,7 @@ ssh-keygen -t rsa -b 4096 -C &amp;ldquo;&lt;a href=&#34;mailto:your_email@exampl
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;!-- All other stuffs --&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;creating-projects-page&#34;&gt;Creating Projects Page&lt;/h3&gt;
+&lt;/div&gt;&lt;h3 id=&#34;creating-an-projects-page&#34;&gt;Creating an Projects Page&lt;/h3&gt;
 &lt;p&gt;Create a new file &lt;code&gt;content/projects.md&lt;/code&gt;:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
@@ -861,7 +865,7 @@ ssh-keygen -t rsa -b 4096 -C &amp;ldquo;&lt;a href=&#34;mailto:your_email@exampl
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;!-- All other stuffs --&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;auto-run-an-update&#34;&gt;Auto run an update&lt;/h2&gt;
+&lt;/div&gt;&lt;h2 id=&#34;try-an-auto-run-update&#34;&gt;Try an Auto run update&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Install the Python scripter plugin.&lt;/li&gt;
 &lt;li&gt;Put you update.py inside .obsidian/scripts/python folder and point you global python version on python version. And here is my contribuition to it:&lt;/li&gt;
@@ -1093,7 +1097,7 @@ ssh-keygen -t rsa -b 4096 -C &amp;ldquo;&lt;a href=&#34;mailto:your_email@exampl
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;reload obsidian an now you can run it from the Ctrl + P comands.&lt;/li&gt;
+&lt;li&gt;reload obsidian an now you can run it. If you have the scripter pluggin that i mentioned, from the Ctrl + P comands you can find it there.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;common-issues&#34;&gt;Common Issues&lt;/h2&gt;
 &lt;ul&gt;
@@ -1111,9 +1115,9 @@ ssh-keygen -t rsa -b 4096 -C &amp;ldquo;&lt;a href=&#34;mailto:your_email@exampl
 &lt;li&gt;Monitor server logs&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;considerations&#34;&gt;Considerations&lt;/h2&gt;
-&lt;p&gt;It was verry fun and joyfull to see this blog being construct. I hope you to do it, so you can also spread this ideias and help others!&lt;/p&gt;
+&lt;p&gt;It was verry fun and joyfull to see this blog being construct. I hope you to do it, so you can also spread your ideias and help others!&lt;/p&gt;
 &lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=dnE7c0ELEH8&amp;amp;list=PLazumvohNo-2qvB49-9RL4karLMmqBDas&amp;amp;index=18&#34;&gt;I started a blog&amp;hellip;..in 2024 (why you should too)&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=dnE7c0ELEH8&amp;amp;list=PLazumvohNo-2qvB49-9RL4karLMmqBDas&amp;amp;index=18&#34;&gt;I started a blog&amp;hellip;..in 2024 (why you should too)&lt;/a&gt;&lt;/p&gt;
 </content>
     </item>
     
