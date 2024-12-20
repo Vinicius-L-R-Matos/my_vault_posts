@@ -2,6 +2,39 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://matosdatascience.com/tags/ai/</loc>
+    <lastmod>2023-12-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://matosdatascience.com/categories/</loc>
+    <lastmod>2023-12-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://matosdatascience.com/tags/how_to/</loc>
+    <lastmod>2023-12-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://matosdatascience.com/series/local/</loc>
+    <lastmod>2023-12-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://matosdatascience.com/</loc>
+    <lastmod>2023-12-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://matosdatascience.com/tags/obsidian/</loc>
+    <lastmod>2023-12-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://matosdatascience.com/posts/</loc>
+    <lastmod>2023-12-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://matosdatascience.com/posts/running-a-local-ai-to-interact-with-your-vault/</loc>
+    <lastmod>2023-12-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://matosdatascience.com/series/</loc>
+    <lastmod>2023-12-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://matosdatascience.com/tags/</loc>
+    <lastmod>2023-12-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://matosdatascience.com/categories/tutorials/</loc>
+    <lastmod>2023-12-20T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://matosdatascience.com/about/</loc>
     <lastmod>2023-12-13T00:00:00+00:00</lastmod>
   </url><url>
@@ -11,37 +44,13 @@
     <loc>https://matosdatascience.com/posts/building-a-blog-system-using-obsidian/</loc>
     <lastmod>2023-12-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://matosdatascience.com/categories/</loc>
-    <lastmod>2023-12-13T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://matosdatascience.com/series/getting-started/</loc>
-    <lastmod>2023-12-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://matosdatascience.com/tags/how_to/</loc>
-    <lastmod>2023-12-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://matosdatascience.com/</loc>
-    <lastmod>2023-12-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://matosdatascience.com/tags/obsidian/</loc>
     <lastmod>2023-12-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://matosdatascience.com/posts/post-novo/</loc>
     <lastmod>2023-12-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://matosdatascience.com/posts/</loc>
-    <lastmod>2023-12-13T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://matosdatascience.com/projects/</loc>
-    <lastmod>2023-12-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://matosdatascience.com/series/</loc>
-    <lastmod>2023-12-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://matosdatascience.com/tags/</loc>
-    <lastmod>2023-12-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://matosdatascience.com/categories/tutorials/</loc>
     <lastmod>2023-12-13T00:00:00+00:00</lastmod>
   </url>
 </urlset>
