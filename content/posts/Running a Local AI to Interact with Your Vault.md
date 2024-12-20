@@ -14,7 +14,7 @@ series:
 
 ## From: Ollama Installation. To: AI Integration
 
-Inspired by [NetworkChuck](https://www.youtube.com/watch?v=Wjrdr0NU4Sk), this guide walks you through setting up Ollama on your system, integrating various AI models, and enhancing your workflow with ==Stable Diffusion== and ==BMO== or ==Smart Connections== on obsidian. Whether you're a developer or an AI enthusiast, this step-by-step tutorial will help you harness the power of local AI models effectively.
+Inspired once more by [NetworkChuck](https://www.youtube.com/watch?v=Wjrdr0NU4Sk), this guide walks you through setting up Ollama on your system, integrating various AI models, and enhancing your workflow with ==Stable Diffusion== and ==BMO== or ==Smart Connections== on obsidian. Whether you're a developer or an AI enthusiast, this step-by-step tutorial will help you harness the power of local AI models effectively.
 
 If you enjoy configuring your AI environment and exploring different models, this approach will provide you with the control and flexibility you need!
 
