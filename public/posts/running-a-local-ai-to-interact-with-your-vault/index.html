@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Running a Local AI to Interact with Your Vault :: Matos Data Science</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="From: Ollama Installation. To: AI Integration Inspired by NetworkChuck, this guide walks you through setting up Ollama on your system, integrating various AI models, and enhancing your workflow with ==Stable Diffusion== and ==BMO== or ==Smart Connections== on obsidian. Whether you&rsquo;re a developer or an AI enthusiast, this step-by-step tutorial will help you harness the power of local AI models effectively.
+If you enjoy configuring your AI environment and exploring different models, this approach will provide you with the control and flexibility you need!
+" />
+<meta name="keywords" content="data science, python, data analysis" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="https://matosdatascience.com/posts/running-a-local-ai-to-interact-with-your-vault/" />
+
+
+
+
+
+  
+  <link rel="stylesheet" href="https://matosdatascience.com/css/buttons.min.2bc533403a27dfe0e93105a92502b42ce4587e2e4a87d9f7d349e51e16e09478.css">
+
+  
+  <link rel="stylesheet" href="https://matosdatascience.com/css/code.min.00125962708925857e7b66dbc58391d55be1191a3d0ce2034de8c9cd2c481c36.css">
+
+  
+  <link rel="stylesheet" href="https://matosdatascience.com/css/fonts.min.4881f0c525f3ce2a1864fb6e96676396cebe1e6fcef1933e8e1dde7041004fb5.css">
+
+  
+  <link rel="stylesheet" href="https://matosdatascience.com/css/footer.min.2e3eb191baee58dd05a9f0104ac1fab0827bca7c64dafe0b2579f934c33a1d69.css">
+
+  
+  <link rel="stylesheet" href="https://matosdatascience.com/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="https://matosdatascience.com/css/header.min.b6fb4423cf82a9f9d7abc9cd010223fa3d70a6526a3f28f8e17d814c06e18f9e.css">
+
+  
+  <link rel="stylesheet" href="https://matosdatascience.com/css/main.min.fe8dc560fccb53a458b0db19ccb7b265764ac46b68596b7e099c6793054dd457.css">
+
+  
+  <link rel="stylesheet" href="https://matosdatascience.com/css/menu.min.83637a90d903026bc280d3f82f96ceb06c5fc72b7c1a8d686afb5bbf818a29f7.css">
+
+  
+  <link rel="stylesheet" href="https://matosdatascience.com/css/pagination.min.82f6400eae7c7c6dc3c866733c2ec0579e4089608fea69400ff85b3880aa0d3c.css">
+
+  
+  <link rel="stylesheet" href="https://matosdatascience.com/css/post.min.fc74ca360273c1d828da3c02b8174eba435607b369d98418ccc6f2243cd4e75d.css">
+
+  
+  <link rel="stylesheet" href="https://matosdatascience.com/css/prism.min.9023bbc24533d09e97a51a0a42a5a7bfe4c591ae167c5551fb1d2191d11977c0.css">
+
+  
+  <link rel="stylesheet" href="https://matosdatascience.com/css/syntax.min.cc789ed9377260d7949ea4c18781fc58959a89287210fe4edbff44ebfc1511b6.css">
+
+  
+  <link rel="stylesheet" href="https://matosdatascience.com/css/terminal.min.dd0bf9c7cacb24c1b0184f52f1869b274e06689557468cc7030ccf632328eb97.css">
+
+  
+  <link rel="stylesheet" href="https://matosdatascience.com/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="https://matosdatascience.com/favicon.png">
+<link rel="apple-touch-icon" href="https://matosdatascience.com/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Running a Local AI to Interact with Your Vault">
+<meta property="og:description" content="From: Ollama Installation. To: AI Integration Inspired by NetworkChuck, this guide walks you through setting up Ollama on your system, integrating various AI models, and enhancing your workflow with ==Stable Diffusion== and ==BMO== or ==Smart Connections== on obsidian. Whether you&rsquo;re a developer or an AI enthusiast, this step-by-step tutorial will help you harness the power of local AI models effectively.
+If you enjoy configuring your AI environment and exploring different models, this approach will provide you with the control and flexibility you need!
+" />
+<meta property="og:url" content="https://matosdatascience.com/posts/running-a-local-ai-to-interact-with-your-vault/" />
+<meta property="og:site_name" content="Matos Data Science" />
+
+  <meta property="og:image" content="https://matosdatascience.com/og-image.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+  <meta property="article:section" content="tutorials" />
+
+
+  <meta property="article:published_time" content="2023-12-20 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+<style>
+ 
+.post-content img,
+.page-content img,
+.post img,
+.page img {
+    display: block;
+    margin: 2rem auto;
+    max-width: 100%;
+    height: auto;
+    width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+ 
+.post-content img:hover,
+.page-content img:hover,
+.post img:hover,
+.page img:hover {
+    transform: scale(1.02);
+}
+
+ 
+.post-content img[alt*="logo"],
+.page-content img[alt*="logo"],
+.post img[alt*="logo"],
+.page img[alt*="logo"] {
+    width: 300px;
+    box-shadow: none;
+}
+
+ 
+.post-content img[alt*="profile"],
+.page-content img[alt*="profile"],
+.post img[alt*="profile"],
+.page img[alt*="profile"] {
+    width: 250px;
+    border-radius: 50%;
+    border: 3px solid #333;
+}
+</style>
+
+</head>
+<body>
+
+
+<div class="container full">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Matos Data Science
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/posts">Posts</a></li>
+        
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/projects">Projects</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/posts" >Posts</a></li>
+        
+      
+        
+          <li><a href="/about" >About</a></li>
+        
+      
+        
+          <li><a href="/projects" >Projects</a></li>
+        
+      
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="https://matosdatascience.com/posts/running-a-local-ai-to-interact-with-your-vault/">Running a Local AI to Interact with Your Vault</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">December 20, 2023 00:00 UTC&nbsp;[Updated:  December 20, 2023 00:00 UTC]</time><span class="post-reading-time">6 min read (1207 words)</span></div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="https://matosdatascience.com/tags/how_to/">how_to</a>&nbsp;
+      
+      #<a href="https://matosdatascience.com/tags/obsidian/">obsidian</a>&nbsp;
+      
+      #<a href="https://matosdatascience.com/tags/ai/">AI</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+  
+    <div class="table-of-contents">
+      <h2>
+        Table of Contents
+      </h2>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#from-ollama-installation-to-ai-integration">From: Ollama Installation. To: AI Integration</a></li>
+    <li><a href="#did-you-ever-run-an-ollama">Did you ever run an Ollama?</a></li>
+    <li><a href="#web-ui">Web UI</a>
+      <ul>
+        <li><a href="#installing-docker">Installing Docker</a></li>
+        <li><a href="#running-the-web-ui-container">Running the Web UI Container</a></li>
+      </ul>
+    </li>
+    <li><a href="#adding-more-models">Adding More Models</a></li>
+    <li><a href="#managing-access">Managing Access</a></li>
+    <li><a href="#creating-custom-models">Creating Custom Models</a></li>
+    <li><a href="#adding-ai-to-smart-connections">Adding AI to Smart Connections</a></li>
+    <li><a href="#about-stable-diffusion">About Stable Diffusion</a>
+      <ul>
+        <li><a href="#stable-diffusion-install">Stable Diffusion Install</a></li>
+        <li><a href="#install-stable-diffusion">Install Stable Diffusion</a></li>
+      </ul>
+    </li>
+    <li><a href="#bmo">BMO</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#summary">Summary</a>
+      <ul>
+        <li><a href="#common-issues">Common Issues</a></li>
+        <li><a href="#regular-tasks">Regular Tasks</a></li>
+        <li><a href="#considerations">Considerations</a></li>
+      </ul>
+    </li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav>
+    </div>
+  
+
+  <div class="post-content"><div>
+        <h2 id="from-ollama-installation-to-ai-integration">From: Ollama Installation. To: AI Integration<a href="#from-ollama-installation-to-ai-integration" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>Inspired by <a href="https://www.youtube.com/watch?v=Wjrdr0NU4Sk">NetworkChuck</a>, this guide walks you through setting up Ollama on your system, integrating various AI models, and enhancing your workflow with ==Stable Diffusion== and ==BMO== or ==Smart Connections== on obsidian. Whether you&rsquo;re a developer or an AI enthusiast, this step-by-step tutorial will help you harness the power of local AI models effectively.</p>
+<p>If you enjoy configuring your AI environment and exploring different models, this approach will provide you with the control and flexibility you need!</p>
+<p>What’s happening here is that you’re setting up a local AI server using Ollama, complemented by a web UI for easier interaction and additional tools like Stable Diffusion for image generation. Once everything is configured, maintaining and expanding your AI capabilities requires minimal effort.</p>
+<p>Below, I’ll show you how to set up Ollama, integrate various AI models, and enhance your setup with additional tools. You can follow these steps to create your personalized AI environment.</p>
+<h2 id="did-you-ever-run-an-ollama">Did you ever run an Ollama?<a href="#did-you-ever-run-an-ollama" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p><img src="/images/ollama.png" alt="Image Description">
+<a href="https://github.com/ollama/ollama/tree/main/docs">Ollama</a> is a lightweight, extensible framework for building and running language models on the local machine. It provides a simple API for creating, running, and managing models, as well as a library of pre-built models that can be easily used in a variety of applications.</p>
+<p>To get started right away, do the following:</p>
+<ol>
+<li>
+<p><strong>Visit Ollama&rsquo;s Website</strong></p>
+<ul>
+<li>Go to <a href="https://ollama.com/">ollama.com</a>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Install WSL on Windows</strong></p>
+<ul>
+<li>Open the Windows Command Prompt (CMD) and execute:
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>wsl --install
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>If is the first time, create some auth there.</li>
+</ul>
+</li>
+<li>
+<p><strong>Upgrade and Update Packages</strong></p>
+<ul>
+<li>In your WSL terminal, run:
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>sudo apt update
+</span></span><span style="display:flex;"><span>sudo apt upgrade -y
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+</li>
+<li>
+<p><strong>Download the Linux Version</strong></p>
+<ul>
+<li>Copy and run the following command from ollama in your terminal:
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -fsSL https://ollama.com/install.sh | sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+</li>
+<li>
+<p><strong>Verify Ollama is Running</strong></p>
+<ul>
+<li>Open your web browser and navigate to:
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>localhost:11434
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>You should see a message indicating that Ollama is running!</li>
+<li><em>Note: I think &ldquo;11434&rdquo; can be transleted as &ldquo;llama&rdquo; if you to bend 90º you neek. Once you to figure it out, maybe it won&rsquo;t come back&hellip;</em></li>
+</ul>
+</li>
+<li>
+<p><strong>Take care of you llamas</strong></p>
+<ul>
+<li>To view all the AI models currently installed in your Ollama setup, use the following command:
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>ollama list
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>If you don&rsquo;t what one of those anymore, you can always eliminate whit:
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>ollama remove model_name
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+</li>
+<li>
+<p><strong>Add an AI Model to Ollama</strong></p>
+<ul>
+<li>Pull the Llama2 model:
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ollama pull model_name
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+</li>
+<li>
+<p><strong>Run and Test the Model</strong></p>
+<ul>
+<li>
+<p>Execute the following command to test:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ollama run model_name
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>You can interact with the model here. Press <code>Ctrl+C</code> to stop the response and type <code>/bye</code> to close the session.</p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="web-ui">Web UI<a href="#web-ui" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>The <a href="https://github.com/open-webui/open-webui">Web UI</a> provides an interface to interact with your AI models more conveniently. There are several options available, and for this guide, we&rsquo;ll set up <strong>Open Web UI</strong> using Docker.</p>
+<h3 id="installing-docker">Installing Docker<a href="#installing-docker" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<ol>
+<li>
+<p><strong>Add Docker&rsquo;s Official GPG Key and Repository</strong></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get update
+</span></span><span style="display:flex;"><span>sudo apt-get install ca-certificates curl
+</span></span><span style="display:flex;"><span>sudo install -m <span style="color:#ae81ff">0755</span> -d /etc/apt/keyrings
+</span></span><span style="display:flex;"><span>sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+</span></span><span style="display:flex;"><span>sudo chmod a+r /etc/apt/keyrings/docker.asc
+</span></span><span style="display:flex;"><span>echo <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#e6db74">&#34;deb [arch=</span><span style="color:#66d9ef">$(</span>dpkg --print-architecture<span style="color:#66d9ef">)</span><span style="color:#e6db74"> signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"></span><span style="color:#66d9ef">$(</span>. /etc/os-release <span style="color:#f92672">&amp;&amp;</span> echo <span style="color:#e6db74">&#34;</span>$VERSION_CODENAME<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74"> stable&#34;</span> | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null
+</span></span><span style="display:flex;"><span>sudo apt-get update
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><strong>Install Docker</strong></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h3 id="running-the-web-ui-container">Running the Web UI Container<a href="#running-the-web-ui-container" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<ol>
+<li><strong>Start the Container</strong>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo docker run -d --network<span style="color:#f92672">=</span>host -v open-webui:/app/backend/data -e OLLAMA_BASE_URL<span style="color:#f92672">=</span>http://127.0.0.1:11434 --name open-webui --restart always ghcr.io/open-webui/open-webui:main
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>If you need to stop it:</li>
+</ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>sudo docker stop open-webui
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li><strong>Verify the Container is Running</strong>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo docker ps
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>You should see a list of running containers, indicating that the Web UI is available at:
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>http://localhost:8080/auth
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>Create a local access credential. The first login uses the <code>admin</code> account.</li>
+<li>Connection settings can be found under <code>Settings</code> -&gt; <code>Connections</code>.</li>
+</ul>
+</li>
+</ol>
+<h2 id="adding-more-models">Adding More Models<a href="#adding-more-models" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<ol>
+<li><strong>Pull Additional Models via Ollama</strong>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ollama pull codegen
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>After installation, the model will be available in the Web UI&rsquo;s selection box.</li>
+</ul>
+</li>
+</ol>
+<h2 id="managing-access">Managing Access<a href="#managing-access" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>You can manage user access through the admin panel:</p>
+<ol>
+<li><strong>Access the Admin Panel</strong>
+<ul>
+<li>Click on the bottom-left logo and navigate to the admin section.</li>
+</ul>
+</li>
+<li><strong>Manage Users and Groups</strong>
+<ul>
+<li>In the <code>Users</code> section, create and assign users to specific groups to control access permissions.</li>
+</ul>
+</li>
+</ol>
+<h2 id="creating-custom-models">Creating Custom Models<a href="#creating-custom-models" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>To create your own models:</p>
+<ol>
+<li><strong>Access the Workspace</strong>
+<ul>
+<li>Navigate to the workspace and click the <code>+</code> button on the top-right corner to add a new model.</li>
+</ul>
+</li>
+</ol>
+<h2 id="adding-ai-to-smart-connections">Adding AI to Smart Connections<a href="#adding-ai-to-smart-connections" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<ol>
+<li><strong>Configure Local AI in Chat Settings</strong>
+<ul>
+<li>Select the <code>Local</code> option and choose the desired model name from the chat configuration settings.</li>
+</ul>
+</li>
+</ol>
+<h2 id="about-stable-diffusion">About Stable Diffusion<a href="#about-stable-diffusion" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>For working with images, setting up Stable Diffusion can enhance your AI capabilities.</p>
+<h3 id="stable-diffusion-install">Stable Diffusion Install<a href="#stable-diffusion-install" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<h4 id="prerequisites">Prerequisites<a href="#prerequisites" class="hanchor" ariaLabel="Anchor">#</a> </h4>
+<ol>
+<li>
+<p><strong>Install Pyenv Prerequisites</strong></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install -y make build-essential libssl-dev zlib1g-dev <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev git
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><strong>Install Pyenv</strong></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl https://pyenv.run | bash
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>*<em>Install Python 3.10</em></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pyenv install 3.10
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><strong>Set Python 3.10 as Global Version</strong></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pyenv global 3.10
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h3 id="install-stable-diffusion">Install Stable Diffusion<a href="#install-stable-diffusion" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<ol>
+<li>
+<p><strong>Download the Web UI Script</strong></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget -q https://raw.githubusercontent.com/AUTOMATIC1111/stable-diffusion-webui/master/webui.sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><strong>Make the Script Executable</strong></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod +x webui.sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><strong>Run the Script</strong></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./webui.sh --listen --api
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h2 id="bmo">BMO<a href="#bmo" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>Installing the BMO plugin will enable the default chosen model. The available commands are:</p>
+<h4 id="general-commands">General Commands<a href="#general-commands" class="hanchor" ariaLabel="Anchor">#</a> </h4>
+<ul>
+<li><code>/clear</code> or <code>/c</code> - Clear chat history.</li>
+<li><code>/ref on</code> - Turn on &ldquo;reference current note&rdquo;.</li>
+<li><code>/ref off</code> - Turn off &ldquo;reference current note&rdquo;.</li>
+<li><code>/maxtokens [VALUE]</code> - Set max tokens.</li>
+<li><code>/temp [VALUE]</code> - Change temperature range from 0 to 2.</li>
+</ul>
+<h4 id="profile-commands">Profile Commands<a href="#profile-commands" class="hanchor" ariaLabel="Anchor">#</a> </h4>
+<ul>
+<li><code>/profile</code> - List profiles.</li>
+<li><code>/profile [PROFILE-NAME] or [VALUE]</code> - Change profile.</li>
+</ul>
+<h4 id="model-commands">Model Commands<a href="#model-commands" class="hanchor" ariaLabel="Anchor">#</a> </h4>
+<ul>
+<li><code>/model</code> - List models.</li>
+<li><code>/model [MODEL-NAME] or [VALUE]</code> - Change model.</li>
+</ul>
+<h4 id="prompt-commands">Prompt Commands<a href="#prompt-commands" class="hanchor" ariaLabel="Anchor">#</a> </h4>
+<ul>
+<li><code>/prompt</code> - List prompts.</li>
+<li><code>/prompt [PROMPT-NAME] or [VALUE]</code> - Change prompts.</li>
+<li><code>/prompt clear</code> - Clear prompt.</li>
+</ul>
+<h4 id="editor-commands">Editor Commands<a href="#editor-commands" class="hanchor" ariaLabel="Anchor">#</a> </h4>
+<ul>
+<li><code>/append</code> - Append current chat history to the current active note.</li>
+<li><code>/save</code> - Save current chat history to a note.</li>
+<li><code>/load</code> - List or load a chat history into view.</li>
+</ul>
+<h4 id="response-commands">Response Commands<a href="#response-commands" class="hanchor" ariaLabel="Anchor">#</a> </h4>
+<ul>
+<li><code>/stop</code> or <code>/s</code> - Stop fetching response. <strong>Warning:</strong> Anthropic models cannot be aborted. Use with caution.</li>
+</ul>
+<h2 id="summary">Summary<a href="#summary" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>This guide provides a comprehensive walkthrough for setting up Ollama on your local machine, integrating various AI models, managing user access, and enhancing your setup with tools like Stable Diffusion and BMO. By following these steps, you can create a robust and flexible AI environment tailored to your specific needs.</p>
+<h3 id="common-issues">Common Issues<a href="#common-issues" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<ul>
+<li><strong>Ollama not running:</strong> Ensure the installation script executed without errors and that WSL is properly installed.</li>
+<li><strong>Docker issues:</strong> Verify Docker is installed correctly and that the Docker daemon is running.</li>
+<li><strong>Model not appearing in Web UI:</strong> Ensure the model was pulled successfully using <code>ollama pull [model_name]</code>.</li>
+<li><strong>Stable Diffusion installation errors:</strong> Check that all prerequisites are installed and that Pyenv is configured correctly.</li>
+</ul>
+<h3 id="regular-tasks">Regular Tasks<a href="#regular-tasks" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<ul>
+<li><strong>Update AI models:</strong> Regularly pull updates for your AI models using Ollama.</li>
+<li><strong>Backup configurations:</strong> Keep backups of your Docker configurations and AI models.</li>
+<li><strong>Monitor system resources:</strong> Ensure your system can handle the resource demands of running multiple AI models.</li>
+</ul>
+<h3 id="considerations">Considerations<a href="#considerations" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>Setting up a local AI environment provides greater control over your data and models. It allows for customization and integration with various tools, enhancing productivity and enabling advanced functionalities. While the initial setup requires technical knowledge, the long-term benefits make it a worthwhile investment for AI enthusiasts and professionals alike.</p>
+<h2 id="references">References<a href="#references" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=Wjrdr0NU4Sk">Host All Your AI Locally</a></li>
+</ul>
+
+      </div></div>
+
+  
+    
+<div class="pagination">
+  <div class="pagination__title">
+    <span class="pagination__title-h">Read other posts</span>
+    <hr />
+  </div>
+  <div class="pagination__buttons">
+    
+    
+    
+      <a href="https://matosdatascience.com/posts/building-a-blog-system-using-obsidian/" class="button inline next">
+        Building a Blog System Using Obsidian
+      </a>
+    
+  </div>
+</div>
+
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2024 Powered by <a href="https://gohugo.io">Hugo</a></span>
+    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>
