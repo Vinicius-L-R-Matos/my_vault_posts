@@ -15,10 +15,10 @@
       <guid>https://matosdatascience.com/posts/running-a-local-ai-to-interact-with-your-vault/</guid>
       <description>&lt;h2 id=&#34;from-ollama-installation-to-ai-integration&#34;&gt;From: Ollama Installation. To: AI Integration&lt;/h2&gt;
 &lt;p&gt;Inspired once more by &lt;a href=&#34;https://www.youtube.com/watch?v=Wjrdr0NU4Sk&#34;&gt;NetworkChuck&lt;/a&gt;, this guide walks you through setting up Ollama on your system, integrating various AI models, and enhancing your workflow with ==Stable Diffusion== and ==BMO== or ==Smart Connections== on obsidian. Whether you&amp;rsquo;re a developer or an AI enthusiast, this step-by-step tutorial will help you harness the power of local AI models effectively.&lt;/p&gt;
-&lt;p&gt;If you enjoy configuring your AI environment and exploring different models, this approach will provide you with the control and flexibility you need!&lt;/p&gt;</description>
+&lt;p&gt;If you also enjoy configuring your AI environment and exploring different models, this approach will provide you with the control and flexibility you need!&lt;/p&gt;</description>
       <content>&lt;h2 id=&#34;from-ollama-installation-to-ai-integration&#34;&gt;From: Ollama Installation. To: AI Integration&lt;/h2&gt;
 &lt;p&gt;Inspired once more by &lt;a href=&#34;https://www.youtube.com/watch?v=Wjrdr0NU4Sk&#34;&gt;NetworkChuck&lt;/a&gt;, this guide walks you through setting up Ollama on your system, integrating various AI models, and enhancing your workflow with ==Stable Diffusion== and ==BMO== or ==Smart Connections== on obsidian. Whether you&amp;rsquo;re a developer or an AI enthusiast, this step-by-step tutorial will help you harness the power of local AI models effectively.&lt;/p&gt;
-&lt;p&gt;If you enjoy configuring your AI environment and exploring different models, this approach will provide you with the control and flexibility you need!&lt;/p&gt;
+&lt;p&gt;If you also enjoy configuring your AI environment and exploring different models, this approach will provide you with the control and flexibility you need!&lt;/p&gt;
 &lt;p&gt;What’s happening here is that you’re setting up a local AI server using Ollama, complemented by a web UI for easier interaction and additional tools like Stable Diffusion for image generation. Once everything is configured, maintaining and expanding your AI capabilities requires minimal effort.&lt;/p&gt;
 &lt;p&gt;Below, I’ll show you how to set up Ollama, integrate various AI models, and enhance your setup with additional tools. You can follow these steps to create your personalized AI environment.&lt;/p&gt;
 &lt;h2 id=&#34;did-you-ever-run-an-ollama&#34;&gt;Did you ever run an Ollama?&lt;/h2&gt;
@@ -1558,19 +1558,6 @@ ssh-keygen -t rsa -b 4096 -C &amp;ldquo;&lt;a href=&#34;mailto:your_email@exampl
 &lt;p&gt;It was verry fun and joyfull to see this blog being construct. I hope you to do it, so you can also spread your ideias and help others!&lt;/p&gt;
 &lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=dnE7c0ELEH8&amp;amp;list=PLazumvohNo-2qvB49-9RL4karLMmqBDas&amp;amp;index=18&#34;&gt;I started a blog&amp;hellip;..in 2024 (why you should too)&lt;/a&gt;&lt;/p&gt;
-</content>
-    </item>
-    
-    <item>
-      <title>post novo</title>
-      <link>https://matosdatascience.com/posts/post-novo/</link>
-      <pubDate>Wed, 13 Dec 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://matosdatascience.com/posts/post-novo/</guid>
-      <description>&lt;h2 id=&#34;post&#34;&gt;post&lt;/h2&gt;
-&lt;p&gt;segundo post! =]] e executa via obsidian!&lt;/p&gt;</description>
-      <content>&lt;h2 id=&#34;post&#34;&gt;post&lt;/h2&gt;
-&lt;p&gt;segundo post! =]] e executa via obsidian!&lt;/p&gt;
 </content>
     </item>
     

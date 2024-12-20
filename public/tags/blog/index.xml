@@ -1021,18 +1021,5 @@ ssh-keygen -t rsa -b 4096 -C &amp;ldquo;&lt;a href=&#34;mailto:your_email@exampl
 </content>
     </item>
     
-    <item>
-      <title>post novo</title>
-      <link>https://matosdatascience.com/posts/post-novo/</link>
-      <pubDate>Wed, 13 Dec 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://matosdatascience.com/posts/post-novo/</guid>
-      <description>&lt;h2 id=&#34;post&#34;&gt;post&lt;/h2&gt;
-&lt;p&gt;segundo post! =]] e executa via obsidian!&lt;/p&gt;</description>
-      <content>&lt;h2 id=&#34;post&#34;&gt;post&lt;/h2&gt;
-&lt;p&gt;segundo post! =]] e executa via obsidian!&lt;/p&gt;
-</content>
-    </item>
-    
   </channel>
 </rss>

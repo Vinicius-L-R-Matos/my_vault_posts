@@ -16,7 +16,7 @@ series:
 
 Inspired once more by [NetworkChuck](https://www.youtube.com/watch?v=Wjrdr0NU4Sk), this guide walks you through setting up Ollama on your system, integrating various AI models, and enhancing your workflow with ==Stable Diffusion== and ==BMO== or ==Smart Connections== on obsidian. Whether you're a developer or an AI enthusiast, this step-by-step tutorial will help you harness the power of local AI models effectively.
 
-If you enjoy configuring your AI environment and exploring different models, this approach will provide you with the control and flexibility you need!
+If you also enjoy configuring your AI environment and exploring different models, this approach will provide you with the control and flexibility you need!
 
 What’s happening here is that you’re setting up a local AI server using Ollama, complemented by a web UI for easier interaction and additional tools like Stable Diffusion for image generation. Once everything is configured, maintaining and expanding your AI capabilities requires minimal effort.
 
