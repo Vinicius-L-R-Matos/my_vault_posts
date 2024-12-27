@@ -194,7 +194,7 @@ Installing the BMO plugin will enable the default chosen model. The available co
 ### Call queries from Python Scripter
 If you like to play some hard code, you can to try to run the script direct from the control painel, or even from the cmd. This is what i come trougth:
 
-```
+```bash
 import requests
 from datetime import datetime
 import os
