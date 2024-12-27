@@ -1244,8 +1244,8 @@ def main():
 if __name__ == "__main__":
     main()
 ```
-T
-his whay i can ask some question, make conection to some ideias an talk whit you data. All by your self. It work fine.In my case better than any plugin. 
+
+This whay i can ask some question, make conection to some ideias an talk whit you data. All by your self. It work fine.In my case better than any plugin. 
 The last created file on the self_questions folder is anwsered in the self_grahs one. If some graphs are out put, they are stored at self_graphs. Like this one bellow:
 ![logo Description](/images/self_graph.png)
 ## Summary
