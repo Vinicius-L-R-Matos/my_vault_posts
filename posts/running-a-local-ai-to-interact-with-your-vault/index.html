@@ -220,7 +220,7 @@ If you also enjoy configuring your AI environment and exploring different models
   <h1 class="post-title">
     <a href="https://matosdatascience.com/posts/running-a-local-ai-to-interact-with-your-vault/">Running a Local AI to Interact with Your Vault</a>
   </h1>
-  <div class="post-meta"><time class="post-date">December 20, 2023 00:00 UTC&nbsp;[Updated:  December 20, 2023 00:00 UTC]</time><span class="post-reading-time">40 min read (8309 words)</span></div>
+  <div class="post-meta"><time class="post-date">December 20, 2023 00:00 UTC&nbsp;[Updated:  December 20, 2023 00:00 UTC]</time><span class="post-reading-time">40 min read (8334 words)</span></div>
 
   
     <span class="post-tags">
@@ -684,7 +684,7 @@ The standard port is 11434, so you can just test some requests. Like:</p>
 <li><code>/stop</code> or <code>/s</code> - Stop fetching response. <strong>Warning:</strong> Anthropic models cannot be aborted. Use with caution.</li>
 </ul>
 <h3 id="call-queries-from-python-scripter">Call queries from Python Scripter<a href="#call-queries-from-python-scripter" class="hanchor" ariaLabel="Anchor">#</a> </h3>
-<p>If you like to play some hard code, you can to try to run the script direct from the control painel, or even from the cmd. This is what i come trougth:</p>
+<p>If you like to play some hard code, you can to try to run the script direct from the control painel, or even from the cmd. Since none of those solutions worked for me, this is what i build:</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">   1
@@ -2319,12 +2319,14 @@ The standard port is 11434, so you can just test some requests. Like:</p>
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1630
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1631
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1632
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1633
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">##ObsidianAssistant
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Solução para chamar a API ollama usando apenas dados sobre as notas do Obsidian em prompt tunning. Lê a nota mais recente no diretório self_questions, devove em estrutura de pastas por date time em self_talk ou em self_graphs.
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">- Aguarda uma estrutura de diretórios a serem lidos: base_path = self.vault_path / &#34;Notas&#34; / &#34;Tratados&#34;.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">- Aguarda possuir o Tinyllama instalado como modelo padrão. Pode alterar isso no YAML da própria nota.
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">- Escreva resuma|explique|desenhe|encontre|relacione e cite o contexto como faria normalmente na nota usando [[]]. 
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">- Chame o script pelo scripter ou cmd usando o seguinte pip: pip install requests datetime pathlib pyyaml fuzzywuzzy networkx matplotlib numpy pyvis pandas python-Levenshtein community.
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">- Abra o grafico no navegador e os dados salvos em seu visualizador de .xlsx.

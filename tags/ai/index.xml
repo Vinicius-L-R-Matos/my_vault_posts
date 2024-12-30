@@ -424,7 +424,7 @@ The standard port is 11434, so you can just test some requests. Like:&lt;/p&gt;
 &lt;li&gt;&lt;code&gt;/stop&lt;/code&gt; or &lt;code&gt;/s&lt;/code&gt; - Stop fetching response. &lt;strong&gt;Warning:&lt;/strong&gt; Anthropic models cannot be aborted. Use with caution.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;call-queries-from-python-scripter&#34;&gt;Call queries from Python Scripter&lt;/h3&gt;
-&lt;p&gt;If you like to play some hard code, you can to try to run the script direct from the control painel, or even from the cmd. This is what i come trougth:&lt;/p&gt;
+&lt;p&gt;If you like to play some hard code, you can to try to run the script direct from the control painel, or even from the cmd. Since none of those solutions worked for me, this is what i build:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;   1
@@ -2059,12 +2059,14 @@ The standard port is 11434, so you can just test some requests. Like:&lt;/p&gt;
 &lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1630
 &lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1631
 &lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1632
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1633
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;##ObsidianAssistant
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;Solução para chamar a API ollama usando apenas dados sobre as notas do Obsidian em prompt tunning. Lê a nota mais recente no diretório self_questions, devove em estrutura de pastas por date time em self_talk ou em self_graphs.
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;- Aguarda uma estrutura de diretórios a serem lidos: base_path = self.vault_path / &amp;#34;Notas&amp;#34; / &amp;#34;Tratados&amp;#34;.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;- Aguarda possuir o Tinyllama instalado como modelo padrão. Pode alterar isso no YAML da própria nota.
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;- Escreva resuma|explique|desenhe|encontre|relacione e cite o contexto como faria normalmente na nota usando [[]]. 
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;- Chame o script pelo scripter ou cmd usando o seguinte pip: pip install requests datetime pathlib pyyaml fuzzywuzzy networkx matplotlib numpy pyvis pandas python-Levenshtein community.
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;- Abra o grafico no navegador e os dados salvos em seu visualizador de .xlsx.
