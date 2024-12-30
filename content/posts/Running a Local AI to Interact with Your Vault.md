@@ -236,13 +236,14 @@ Installing the BMO plugin will enable the default chosen model. The available co
 - `/stop` or `/s` - Stop fetching response. **Warning:** Anthropic models cannot be aborted. Use with caution.
 
 ### Call queries from Python Scripter
-If you like to play some hard code, you can to try to run the script direct from the control painel, or even from the cmd. This is what i come trougth:
+If you like to play some hard code, you can to try to run the script direct from the control painel, or even from the cmd. Since none of those solutions worked for me, this is what i build:
 
 ```python
 """
 ##ObsidianAssistant
 Solução para chamar a API ollama usando apenas dados sobre as notas do Obsidian em prompt tunning. Lê a nota mais recente no diretório self_questions, devove em estrutura de pastas por date time em self_talk ou em self_graphs.
 - Aguarda uma estrutura de diretórios a serem lidos: base_path = self.vault_path / "Notas" / "Tratados".
+- Aguarda possuir o Tinyllama instalado como modelo padrão. Pode alterar isso no YAML da própria nota.
 - Escreva resuma|explique|desenhe|encontre|relacione e cite o contexto como faria normalmente na nota usando [[]]. 
 - Chame o script pelo scripter ou cmd usando o seguinte pip: pip install requests datetime pathlib pyyaml fuzzywuzzy networkx matplotlib numpy pyvis pandas python-Levenshtein community.
 - Abra o grafico no navegador e os dados salvos em seu visualizador de .xlsx.
@@ -1871,7 +1872,6 @@ def main():
 
 if __name__ == "__main__":
     main()
-
 ```
 
 This whay i can ask some question, make conection to some ideias an talk whit you data. All by your self. It work fine.In my case better than any plugin. 
