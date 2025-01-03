@@ -569,3 +569,5 @@ It was verry fun and joyfull to see this blog being construct. I hope you to do 
 ## References
 [I started a blog.....in 2024 (why you should too)](https://www.youtube.com/watch?v=dnE7c0ELEH8&list=PLazumvohNo-2qvB49-9RL4karLMmqBDas&index=18)
 
+funcionou
+
