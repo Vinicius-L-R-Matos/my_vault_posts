@@ -46,7 +46,7 @@ This repository is meant for public sharing, so any updates pushed to this branc
 
 - 🌐 [Matos Data Science Website](https://matosdatascience.com/)
 - 🐙 [GitHub Profile](https://github.com/Vinicius-L-R-Matos)
-- 🔗 [LinkedIn](https://www.linkedin.com/in/vinicius-rodriguesdematos/))
+- 🔗 [LinkedIn](https://www.linkedin.com/in/vinicius-rodriguesdematos/)
 
 ## 🤝 Contributing
 
