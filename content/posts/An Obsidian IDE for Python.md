@@ -13,7 +13,7 @@ series:
   - python
 ---
 
-## You did what?
+## You did what?!
 Let me explain: You write your notes in your Vault. Then, you run a command, and the code inside becomes a script and executes! And it does so with the environment of your choice already activated.
 
 ## Oh, I see now. This is a notebook!

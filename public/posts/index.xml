@@ -13,11 +13,11 @@
       <pubDate>Tue, 25 Feb 2025 00:00:00 +0000</pubDate>
       
       <guid>https://matosdatascience.com/posts/an-obsidian-ide-for-python/</guid>
-      <description>&lt;h2 id=&#34;you-did-what&#34;&gt;You did what?&lt;/h2&gt;
+      <description>&lt;h2 id=&#34;you-did-what&#34;&gt;You did what?!&lt;/h2&gt;
 &lt;p&gt;Let me explain: You write your notes in your Vault. Then, you run a command, and the code inside becomes a script and executes! And it does so with the environment of your choice already activated.&lt;/p&gt;
 &lt;h2 id=&#34;oh-i-see-now-this-is-a-notebook&#34;&gt;Oh, I see now. This is a notebook!&lt;/h2&gt;
 &lt;p&gt;No, it’s not. It transforms every code block—including comments—into an independent &lt;code&gt;script.py&lt;/code&gt; inside your &lt;code&gt;.obsidian\scripts\python&lt;/code&gt; folder. From there, you can grab it and start deploying or packaging it.&lt;/p&gt;</description>
-      <content>&lt;h2 id=&#34;you-did-what&#34;&gt;You did what?&lt;/h2&gt;
+      <content>&lt;h2 id=&#34;you-did-what&#34;&gt;You did what?!&lt;/h2&gt;
 &lt;p&gt;Let me explain: You write your notes in your Vault. Then, you run a command, and the code inside becomes a script and executes! And it does so with the environment of your choice already activated.&lt;/p&gt;
 &lt;h2 id=&#34;oh-i-see-now-this-is-a-notebook&#34;&gt;Oh, I see now. This is a notebook!&lt;/h2&gt;
 &lt;p&gt;No, it’s not. It transforms every code block—including comments—into an independent &lt;code&gt;script.py&lt;/code&gt; inside your &lt;code&gt;.obsidian\scripts\python&lt;/code&gt; folder. From there, you can grab it and start deploying or packaging it.&lt;/p&gt;
