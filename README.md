@@ -1,6 +1,5 @@
 # My Vault Posts
 
-![Repository Banner](https://matosdatascience.com/assets/banner.png)  
 *A public branch of my local Obsidian Vault, automatically syncing selected content to a Hostinger-hosted domain to share my work with the world.*
 
 ## 📌 About
@@ -46,7 +45,7 @@ This repository is meant for public sharing, so any updates pushed to this branc
 
 - 🌐 [Matos Data Science Website](https://matosdatascience.com/)
 - 🐙 [GitHub Profile](https://github.com/Vinicius-L-R-Matos)
-- 🔗 [LinkedIn]([https://www.linkedin.com/in/matosdatasci/](https://www.linkedin.com/in/vinicius-rodriguesdematos/))
+- 🔗 [LinkedIn](https://www.linkedin.com/in/vinicius-rodriguesdematos/)
 
 ## 🤝 Contributing
 
