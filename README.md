@@ -1,6 +1,5 @@
 # My Vault Posts
 
-![Repository Banner](https://matosdatascience.com/assets/banner.png)  
 *A public branch of my local Obsidian Vault, automatically syncing selected content to a Hostinger-hosted domain to share my work with the world.*
 
 ## 📌 About
