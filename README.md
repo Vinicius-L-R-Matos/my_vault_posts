@@ -53,7 +53,7 @@ This repository is primarily for personal publishing, but feedback is welcome! F
 
 ## 📜 License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](https://mit-license.org/) file for details.
 
 ---
 
